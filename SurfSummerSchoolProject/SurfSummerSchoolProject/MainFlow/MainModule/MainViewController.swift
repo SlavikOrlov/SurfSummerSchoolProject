@@ -11,6 +11,14 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "searchTab"), style: .plain, target: self, action: #selector(searchBarButtonTap))
     }
+    
+    @objc func searchBarButtonTap() {
+        navigationController?.pushViewController(SearchViewController(), animated: true)
+    }
+    
+    
+    
 }

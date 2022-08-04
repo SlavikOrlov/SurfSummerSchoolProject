@@ -18,7 +18,8 @@
 		558DB1A5289A720D00CF2B05 /* FavoriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 558DB1A3289A720D00CF2B05 /* FavoriteViewController.xib */; };
 		558DB1A9289A72CE00CF2B05 /* TabBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558DB1A8289A72CE00CF2B05 /* TabBarModel.swift */; };
 		558DB1AB289A91A100CF2B05 /* TabBarConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558DB1AA289A91A100CF2B05 /* TabBarConfigurator.swift */; };
-		558DB1AE289A9EC700CF2B05 /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558DB1AD289A9EC700CF2B05 /* NavBar.swift */; };
+		558DB1B4289BAD8E00CF2B05 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558DB1B2289BAD8E00CF2B05 /* SearchViewController.swift */; };
+		558DB1B5289BAD8E00CF2B05 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 558DB1B3289BAD8E00CF2B05 /* SearchViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +36,8 @@
 		558DB1A3289A720D00CF2B05 /* FavoriteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteViewController.xib; sourceTree = "<group>"; };
 		558DB1A8289A72CE00CF2B05 /* TabBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModel.swift; sourceTree = "<group>"; };
 		558DB1AA289A91A100CF2B05 /* TabBarConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarConfigurator.swift; sourceTree = "<group>"; };
-		558DB1AD289A9EC700CF2B05 /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
+		558DB1B2289BAD8E00CF2B05 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		558DB1B3289BAD8E00CF2B05 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +80,7 @@
 		558DB19E289A71B300CF2B05 /* MainFlow */ = {
 			isa = PBXGroup;
 			children = (
-				558DB1AC289A9EB200CF2B05 /* NavigationBar */,
+				558DB1AF289BAD0900CF2B05 /* SearchViewController */,
 				558DB1A7289A72BC00CF2B05 /* TabBar */,
 				558DB1A1289A71F200CF2B05 /* FavoriteModule */,
 				558DB1A0289A71D500CF2B05 /* ProfileModule */,
@@ -133,12 +135,13 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
-		558DB1AC289A9EB200CF2B05 /* NavigationBar */ = {
+		558DB1AF289BAD0900CF2B05 /* SearchViewController */ = {
 			isa = PBXGroup;
 			children = (
-				558DB1AD289A9EC700CF2B05 /* NavBar.swift */,
+				558DB1B2289BAD8E00CF2B05 /* SearchViewController.swift */,
+				558DB1B3289BAD8E00CF2B05 /* SearchViewController.xib */,
 			);
-			path = NavigationBar;
+			path = SearchViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +204,7 @@
 			files = (
 				558DB18F289A57DB00CF2B05 /* LaunchScreen.storyboard in Resources */,
 				558DB18C289A57DB00CF2B05 /* Assets.xcassets in Resources */,
+				558DB1B5289BAD8E00CF2B05 /* SearchViewController.xib in Resources */,
 				558DB1A5289A720D00CF2B05 /* FavoriteViewController.xib in Resources */,
 				558DB19D289A6A7600CF2B05 /* ProfileViewController.xib in Resources */,
 				558DB199289A68BC00CF2B05 /* MainViewController.xib in Resources */,
@@ -216,9 +220,9 @@
 			files = (
 				558DB183289A57D900CF2B05 /* AppDelegate.swift in Sources */,
 				558DB1A9289A72CE00CF2B05 /* TabBarModel.swift in Sources */,
+				558DB1B4289BAD8E00CF2B05 /* SearchViewController.swift in Sources */,
 				558DB19C289A6A7600CF2B05 /* ProfileViewController.swift in Sources */,
 				558DB1A4289A720D00CF2B05 /* FavoriteViewController.swift in Sources */,
-				558DB1AE289A9EC700CF2B05 /* NavBar.swift in Sources */,
 				558DB1AB289A91A100CF2B05 /* TabBarConfigurator.swift in Sources */,
 				558DB198289A68BC00CF2B05 /* MainViewController.swift in Sources */,
 			);
