@@ -20,6 +20,9 @@
 		558DB1AB289A91A100CF2B05 /* TabBarConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558DB1AA289A91A100CF2B05 /* TabBarConfigurator.swift */; };
 		558DB1B4289BAD8E00CF2B05 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558DB1B2289BAD8E00CF2B05 /* SearchViewController.swift */; };
 		558DB1B5289BAD8E00CF2B05 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 558DB1B3289BAD8E00CF2B05 /* SearchViewController.xib */; };
+		55EAB9ED289EF5FF00D608B1 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EAB9EC289EF5FF00D608B1 /* MainModel.swift */; };
+		55EAB9F3289F006E00D608B1 /* MainItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EAB9F1289F006E00D608B1 /* MainItemCollectionViewCell.swift */; };
+		55EAB9F4289F006E00D608B1 /* MainItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55EAB9F2289F006E00D608B1 /* MainItemCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		558DB1AA289A91A100CF2B05 /* TabBarConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarConfigurator.swift; sourceTree = "<group>"; };
 		558DB1B2289BAD8E00CF2B05 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		558DB1B3289BAD8E00CF2B05 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		55EAB9EC289EF5FF00D608B1 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
+		55EAB9F1289F006E00D608B1 /* MainItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		55EAB9F2289F006E00D608B1 /* MainItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainItemCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,8 +98,10 @@
 		558DB19F289A71BD00CF2B05 /* MainModule */ = {
 			isa = PBXGroup;
 			children = (
+				55EAB9F0289F002700D608B1 /* Cells */,
 				558DB196289A68BC00CF2B05 /* MainViewController.swift */,
 				558DB197289A68BC00CF2B05 /* MainViewController.xib */,
+				55EAB9EC289EF5FF00D608B1 /* MainModel.swift */,
 			);
 			path = MainModule;
 			sourceTree = "<group>";
@@ -142,6 +150,15 @@
 				558DB1B3289BAD8E00CF2B05 /* SearchViewController.xib */,
 			);
 			path = SearchViewController;
+			sourceTree = "<group>";
+		};
+		55EAB9F0289F002700D608B1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				55EAB9F1289F006E00D608B1 /* MainItemCollectionViewCell.swift */,
+				55EAB9F2289F006E00D608B1 /* MainItemCollectionViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,6 +222,7 @@
 				558DB18F289A57DB00CF2B05 /* LaunchScreen.storyboard in Resources */,
 				558DB18C289A57DB00CF2B05 /* Assets.xcassets in Resources */,
 				558DB1B5289BAD8E00CF2B05 /* SearchViewController.xib in Resources */,
+				55EAB9F4289F006E00D608B1 /* MainItemCollectionViewCell.xib in Resources */,
 				558DB1A5289A720D00CF2B05 /* FavoriteViewController.xib in Resources */,
 				558DB19D289A6A7600CF2B05 /* ProfileViewController.xib in Resources */,
 				558DB199289A68BC00CF2B05 /* MainViewController.xib in Resources */,
@@ -218,12 +236,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55EAB9ED289EF5FF00D608B1 /* MainModel.swift in Sources */,
 				558DB183289A57D900CF2B05 /* AppDelegate.swift in Sources */,
 				558DB1A9289A72CE00CF2B05 /* TabBarModel.swift in Sources */,
 				558DB1B4289BAD8E00CF2B05 /* SearchViewController.swift in Sources */,
 				558DB19C289A6A7600CF2B05 /* ProfileViewController.swift in Sources */,
 				558DB1A4289A720D00CF2B05 /* FavoriteViewController.swift in Sources */,
 				558DB1AB289A91A100CF2B05 /* TabBarConfigurator.swift in Sources */,
+				55EAB9F3289F006E00D608B1 /* MainItemCollectionViewCell.swift in Sources */,
 				558DB198289A68BC00CF2B05 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
