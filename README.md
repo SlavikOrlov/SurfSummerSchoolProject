@@ -33,10 +33,5 @@
 - [X] Обновление проекта в репозиторий
 
 **Примеры экранов:**
-[Splash.pdf](https://github.com/SlavikOrlov/SurfSummerSchoolProject/files/9277445/Splash.pdf)
-[Login focused.pdf](https://github.com/SlavikOrlov/SurfSummerSchoolProject/files/9277447/Login.focused.pdf)
-[Home.pdf](https://github.com/SlavikOrlov/SurfSummerSchoolProject/files/9277448/Home.pdf)
-[Home more.pdf](https://github.com/SlavikOrlov/SurfSummerSchoolProject/files/9277449/Home.more.pdf)
-[Favorite.pdf](https://github.com/SlavikOrlov/SurfSummerSchoolProject/files/9277450/Favorite.pdf)
-[Profile.pdf](https://github.com/SlavikOrlov/SurfSummerSchoolProject/files/9277451/Profile.pdf)
-[Search.pdf](https://github.com/SlavikOrlov/SurfSummerSchoolProject/files/9277452/Search.pdf)
+![Splash](https://user-images.githubusercontent.com/99760600/183309438-c7517d20-acc5-42f2-9cc3-3245496c4f02.jpg)
+![Login focused](https://user-images.githubusercontent.com/99760600/183309441-18d726c1-a65e-4932-91ed-173a1b636c8a.jpg)
