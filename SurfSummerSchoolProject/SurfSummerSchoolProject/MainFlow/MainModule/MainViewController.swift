@@ -63,9 +63,6 @@ private extension MainViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "searchTab"), style: .plain, target: self, action: #selector(searchBarButtonTap))
     }
     
-    @objc func searchBarButtonTap() {
-        navigationController?.pushViewController(SearchViewController(), animated: true)
-    }
 }
 
 // MARK: - UICollection
@@ -99,6 +96,14 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return Constants.spaceBetweenElements
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        navigationController?.pushViewController(DetailViewController(), animated: true)
+    }
+    
+    @objc func searchBarButtonTap() {
+        navigationController?.pushViewController(SearchViewController(), animated: true)
     }
     
 }

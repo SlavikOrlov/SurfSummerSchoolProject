@@ -23,6 +23,8 @@
 		55EAB9ED289EF5FF00D608B1 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EAB9EC289EF5FF00D608B1 /* MainModel.swift */; };
 		55EAB9F3289F006E00D608B1 /* MainItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EAB9F1289F006E00D608B1 /* MainItemCollectionViewCell.swift */; };
 		55EAB9F4289F006E00D608B1 /* MainItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55EAB9F2289F006E00D608B1 /* MainItemCollectionViewCell.xib */; };
+		55EAB9F8289FDE3A00D608B1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EAB9F6289FDE3A00D608B1 /* DetailViewController.swift */; };
+		55EAB9F9289FDE3A00D608B1 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55EAB9F7289FDE3A00D608B1 /* DetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		55EAB9EC289EF5FF00D608B1 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		55EAB9F1289F006E00D608B1 /* MainItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		55EAB9F2289F006E00D608B1 /* MainItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		55EAB9F6289FDE3A00D608B1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		55EAB9F7289FDE3A00D608B1 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 		558DB19E289A71B300CF2B05 /* MainFlow */ = {
 			isa = PBXGroup;
 			children = (
+				55EAB9F5289FDDD200D608B1 /* DetailModule */,
 				558DB1AF289BAD0900CF2B05 /* SearchViewController */,
 				558DB1A7289A72BC00CF2B05 /* TabBar */,
 				558DB1A1289A71F200CF2B05 /* FavoriteModule */,
@@ -161,6 +166,15 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		55EAB9F5289FDDD200D608B1 /* DetailModule */ = {
+			isa = PBXGroup;
+			children = (
+				55EAB9F6289FDE3A00D608B1 /* DetailViewController.swift */,
+				55EAB9F7289FDE3A00D608B1 /* DetailViewController.xib */,
+			);
+			path = DetailModule;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -222,6 +236,7 @@
 				558DB18F289A57DB00CF2B05 /* LaunchScreen.storyboard in Resources */,
 				558DB18C289A57DB00CF2B05 /* Assets.xcassets in Resources */,
 				558DB1B5289BAD8E00CF2B05 /* SearchViewController.xib in Resources */,
+				55EAB9F9289FDE3A00D608B1 /* DetailViewController.xib in Resources */,
 				55EAB9F4289F006E00D608B1 /* MainItemCollectionViewCell.xib in Resources */,
 				558DB1A5289A720D00CF2B05 /* FavoriteViewController.xib in Resources */,
 				558DB19D289A6A7600CF2B05 /* ProfileViewController.xib in Resources */,
@@ -243,6 +258,7 @@
 				558DB19C289A6A7600CF2B05 /* ProfileViewController.swift in Sources */,
 				558DB1A4289A720D00CF2B05 /* FavoriteViewController.swift in Sources */,
 				558DB1AB289A91A100CF2B05 /* TabBarConfigurator.swift in Sources */,
+				55EAB9F8289FDE3A00D608B1 /* DetailViewController.swift in Sources */,
 				55EAB9F3289F006E00D608B1 /* MainItemCollectionViewCell.swift in Sources */,
 				558DB198289A68BC00CF2B05 /* MainViewController.swift in Sources */,
 			);
