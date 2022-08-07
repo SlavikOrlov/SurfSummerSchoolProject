@@ -8,7 +8,7 @@
 import UIKit
 
 class DetailImageTableViewCell: UITableViewCell {
-
+    
     // MARK: - Views
     
     @IBOutlet private weak var cartImageView: UIImageView!

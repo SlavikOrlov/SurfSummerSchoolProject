@@ -12,7 +12,7 @@ class DetailViewController: UIViewController, UIGestureRecognizerDelegate {
     // MARK: - Views
     
     private let tableView = UITableView()
-
+    
     // MARK: - Properties
     
     var model: DetailItemModel?

@@ -8,7 +8,7 @@
 import UIKit
 
 class FavoriteViewCell: UITableViewCell {
-
+    
     // MARK: - Constants
     
     private enum Constants {
@@ -70,7 +70,7 @@ class FavoriteViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        configureAppearance()
     }
 }
 
@@ -80,6 +80,7 @@ private extension FavoriteViewCell {
     
     func configureAppearance() {
         selectionStyle = .none
+        
         favoriteImage.layer.cornerRadius = 12
         favoriteImage.contentMode = .scaleAspectFill
         

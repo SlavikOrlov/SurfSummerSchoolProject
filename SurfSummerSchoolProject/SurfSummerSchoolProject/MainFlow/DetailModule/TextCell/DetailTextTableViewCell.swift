@@ -8,13 +8,13 @@
 import UIKit
 
 class DetailTextTableViewCell: UITableViewCell {
-
+    
     // MARK: - Views
     
     @IBOutlet private weak var contentLabel: UILabel!
     
     // MARK: - Properties
-
+    
     var text: String? {
         didSet {
             contentLabel.text = text
@@ -22,7 +22,7 @@ class DetailTextTableViewCell: UITableViewCell {
     }
     
     // MARK: - UITableViewCell
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         configureAppearance()

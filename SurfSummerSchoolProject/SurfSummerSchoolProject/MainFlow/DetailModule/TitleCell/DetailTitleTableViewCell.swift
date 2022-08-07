@@ -8,7 +8,7 @@
 import UIKit
 
 class DetailTitleTableViewCell: UITableViewCell {
-
+    
     // MARK: - Views
     
     @IBOutlet private weak var cartTitleLabel: UILabel!

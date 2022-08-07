@@ -20,14 +20,14 @@ class MainViewController: UIViewController {
     // MARK: - Properties
     
     private let model: MainModel = .init()
-
+    
     
     // MARK: - Views
     
     @IBOutlet private weak var collectionView: UICollectionView!
     
     // MARK: - Lifecyrcle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,7 +41,7 @@ class MainViewController: UIViewController {
 // MARK: - Private Methods
 
 private extension MainViewController {
-
+    
     func configureApperance() {
         collectionView.register(UINib(nibName: "\(MainItemCollectionViewCell.self)", bundle: .main), forCellWithReuseIdentifier: "\(MainItemCollectionViewCell.self)")
         collectionView.dataSource = self
