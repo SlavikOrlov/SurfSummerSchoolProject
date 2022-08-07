@@ -29,7 +29,6 @@ class MainItemCollectionViewCell: UICollectionViewCell {
     
     var buttonImage: UIImage? {
         return isFavorite ? Constants.fillHeartImage : Constants.heartImage
-
     }
     
     // Нажатие кнопки и уменьшение
@@ -69,9 +68,7 @@ class MainItemCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         configureAppearance()
-        
     }
 
 }
@@ -83,9 +80,7 @@ private extension MainItemCollectionViewCell {
     func configureAppearance() {
         titleLabel.textColor = .black
         titleLabel.font = .systemFont(ofSize: 12)
-        
         imageView.layer.cornerRadius = 12
-        
         favoriteButton.tintColor = .white
     }
 }

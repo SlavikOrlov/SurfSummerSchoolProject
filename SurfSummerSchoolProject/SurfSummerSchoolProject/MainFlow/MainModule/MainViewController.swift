@@ -35,10 +35,7 @@ class MainViewController: UIViewController {
         configureApperance()
         configureModel()
         model.getPosts()
-        
     }
-    
-    
 }
 
 // MARK: - Private Methods
@@ -107,5 +104,4 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     @objc func searchBarButtonTap() {
         navigationController?.pushViewController(SearchViewController(), animated: true)
     }
-    
 }

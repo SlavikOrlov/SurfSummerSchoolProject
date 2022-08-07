@@ -1,14 +1,14 @@
 //
-//  MainModel.swift
+//  FavoriteModel.swift
 //  SurfSummerSchoolProject
 //
-//  Created by Slava Orlov on 06.08.2022.
+//  Created by Slava Orlov on 07.08.2022.
 //
 
 import Foundation
 import UIKit
 
-final class MainModel {
+final class FavoriteModel {
     
     // MARK: - Events
     
@@ -16,7 +16,7 @@ final class MainModel {
     
     // MARK: - Properties
     
-    var items: [DetailItemModel] = [] {
+    var items: [FavoriteItemModel] = [] {
         didSet {
             didItemsUpdated?()
         }
@@ -25,8 +25,6 @@ final class MainModel {
     // MARK: - Methods
     
     func getPosts() {
-        items = Array(repeating: DetailItemModel.createDefault(), count: 20)
+        items = Array(repeating: FavoriteItemModel.createDefault(), count: 20)
     }
 }
-
-

@@ -11,8 +11,8 @@ class SearchViewController: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK: - Views
     
-    @IBOutlet private weak var searchBar: UISearchBar!
-    
+    private lazy var searchBar = UISearchBar()
+
     // MARK: - UIViewController
     
     override func viewDidLoad() {
@@ -30,10 +30,12 @@ class SearchViewController: UIViewController, UIGestureRecognizerDelegate {
 private extension SearchViewController {
         
         func configureAppearance() {
+            searchBar = UISearchBar(frame: CGRect(x: 56, y: 53, width: 303, height: 32))
+            searchBar.searchBarStyle = .minimal
             searchBar.placeholder = "Поиск"
-            searchBar.searchTextField.font = .systemFont(ofSize: 14)
-            searchBar.layer.borderWidth = 1
-            searchBar.layer.borderColor = UIColor.white.cgColor
+            searchBar.layer.cornerRadius = 22
+            searchBar.clipsToBounds = true
+            view.addSubview(searchBar)
         }
         
         func configureNavigationBar() {
