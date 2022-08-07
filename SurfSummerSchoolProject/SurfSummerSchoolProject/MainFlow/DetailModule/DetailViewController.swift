@@ -17,7 +17,6 @@ class DetailViewController: UIViewController, UIGestureRecognizerDelegate {
     
     var model: DetailItemModel?
     
-    
     // MARK: - UIViewController
     
     override func viewDidLoad() {
