@@ -15,6 +15,10 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         
         searchBar.placeholder = "Поиск"
+        searchBar.searchTextField.font = .systemFont(ofSize: 14)
+        searchBar.layer.borderWidth = 1
+        searchBar.layer.borderColor = UIColor.white.cgColor
+        
 
     }
 
