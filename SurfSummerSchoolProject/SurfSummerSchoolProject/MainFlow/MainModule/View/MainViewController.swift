@@ -34,33 +34,38 @@ class MainViewController: UIViewController {
         configuresearchButton()
         configureApperance()
         configureModel()
-        model.getPosts()
+        model.loadPosts()
     }
 }
 
 // MARK: - Private Methods
 
 private extension MainViewController {
-    
+
     func configureApperance() {
-        collectionView.register(UINib(nibName: "\(MainItemCollectionViewCell.self)", bundle: .main), forCellWithReuseIdentifier: "\(MainItemCollectionViewCell.self)")
+        navigationItem.title = "Главная"
+        collectionView.register(UINib(nibName: "\(MainItemCollectionViewCell.self)", bundle: .main),
+                                forCellWithReuseIdentifier: "\(MainItemCollectionViewCell.self)")
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.contentInset = .init(top: 10, left: 16, bottom: 10, right: 16)
     }
-    
+
     func configureModel() {
         model.didItemsUpdated = { [weak self] in
-            self?.collectionView.reloadData()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self?.collectionView.reloadData()
+            }
         }
     }
-    
     // My version searchButtonTap
     func configuresearchButton() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "searchTab"), style: .plain, target: self, action: #selector(searchBarButtonTap))
     }
-    
 }
+    
+    
+    
 
 // MARK: - UICollection
 
@@ -77,7 +82,10 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
             let item = model.items[indexPath.row]
             cell.title = item.title
             cell.isFavorite = item.isFavorite
-            cell.image = item.image
+            cell.imageUrlInString = item.imageUrlInString
+            cell.didFavoritesTapped = { [weak self] in
+                self?.model.items[indexPath.row].isFavorite.toggle()
+            }
         }
         return cell
     }
