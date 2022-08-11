@@ -31,6 +31,7 @@ class MainItemCollectionViewCell: UICollectionViewCell {
         return isFavorite ? Constants.fillHeartImage : Constants.heartImage
     }
     
+    // анимацию в отдельный метод (разделить из-зи большого кол-ва ответственности
     // Нажатие кнопки и уменьшение
     override var isHighlighted: Bool {
         didSet {
@@ -46,9 +47,12 @@ class MainItemCollectionViewCell: UICollectionViewCell {
             titleLabel.text = title
         }
     }
-    var image: UIImage? {
+    var imageUrlInString: String = "" {
         didSet {
-            imageView.image = image
+            guard let url = URL(string: imageUrlInString) else {
+                return
+            }
+            imageView.loadImage(from: url)
         }
     }
     var isFavorite: Bool = false {

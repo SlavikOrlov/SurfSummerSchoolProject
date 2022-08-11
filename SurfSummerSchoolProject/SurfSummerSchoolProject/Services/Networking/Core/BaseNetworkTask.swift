@@ -42,8 +42,8 @@ struct BaseNetworkTask<AbstractInput: Encodable, AbstractOutput: Decodable>: Net
     
     func performRequest(
         input: AbstractInput,
-        _ onResponseWasReceived: @escaping (_ result: Result<AbstractOutput, Error>) -> Void
-    ) {
+        _ onResponseWasReceived: @escaping (_ result: Result<AbstractOutput, Error>)
+        -> Void) {
         do {
             let request = try getRequest(with: input)
             
@@ -75,7 +75,6 @@ struct BaseNetworkTask<AbstractInput: Encodable, AbstractOutput: Decodable>: Net
             onResponseWasReceived(.failure(error))
         }
     }
-    
 }
 
 // MARK: - EmptyModel
