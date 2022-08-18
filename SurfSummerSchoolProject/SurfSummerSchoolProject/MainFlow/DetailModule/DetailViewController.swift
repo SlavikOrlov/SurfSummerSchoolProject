@@ -9,6 +9,12 @@ import UIKit
 
 final class DetailViewController: UIViewController, UIGestureRecognizerDelegate {
     
+    //MARK: - Constants
+    private let detailImageTableViewCell: String = "\(DetailImageTableViewCell.self)"
+    private let detailTitleTableViewCell: String = "\(DetailTitleTableViewCell.self)"
+    private let detailTextTableViewCell: String = "\(DetailTextTableViewCell.self)"
+    private let numberOfRows = 3
+
     // MARK: - Views
     
     private let tableView = UITableView()
@@ -26,6 +32,7 @@ final class DetailViewController: UIViewController, UIGestureRecognizerDelegate 
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         configureNavigationBar()
     }
 }
@@ -60,9 +67,9 @@ private extension DetailViewController {
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
         // вынести в extension!!!
-        tableView.register(UINib(nibName: "\(DetailImageTableViewCell.self)", bundle: .main), forCellReuseIdentifier: "\(DetailImageTableViewCell.self)")
-        tableView.register(UINib(nibName: "\(DetailTitleTableViewCell.self)", bundle: .main), forCellReuseIdentifier: "\(DetailTitleTableViewCell.self)")
-        tableView.register(UINib(nibName: "\(DetailTextTableViewCell.self)", bundle: .main), forCellReuseIdentifier: "\(DetailTextTableViewCell.self)")
+        tableView.register(UINib(nibName: detailImageTableViewCell, bundle: .main), forCellReuseIdentifier: detailImageTableViewCell)
+        tableView.register(UINib(nibName: detailTitleTableViewCell, bundle: .main), forCellReuseIdentifier: detailTitleTableViewCell)
+        tableView.register(UINib(nibName: detailTextTableViewCell, bundle: .main), forCellReuseIdentifier: detailTextTableViewCell)
         tableView.dataSource = self
         tableView.separatorStyle = .none
     }
@@ -73,26 +80,26 @@ private extension DetailViewController {
 extension DetailViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return numberOfRows
     }
-    // сделать более расширяемо!!!
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "\(DetailImageTableViewCell.self)")
+            let cell = tableView.dequeueReusableCell(withIdentifier: detailImageTableViewCell)
             if let cell = cell as? DetailImageTableViewCell {
                 cell.imageUrlInString = model?.imageUrlInString ?? ""
             }
             return cell ?? UITableViewCell()
         case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "\(DetailTitleTableViewCell.self)")
+            let cell = tableView.dequeueReusableCell(withIdentifier: detailTitleTableViewCell)
             if let cell = cell as? DetailTitleTableViewCell {
                 cell.title = model?.title ?? ""
                 cell.date = model?.dateCreation ?? ""
             }
             return cell ?? UITableViewCell()
         case 2:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "\(DetailTextTableViewCell.self)")
+            let cell = tableView.dequeueReusableCell(withIdentifier: detailTextTableViewCell)
             if let cell = cell as? DetailTextTableViewCell {
                 cell.text = model?.content
             }

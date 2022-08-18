@@ -11,7 +11,6 @@ struct TokenContainer {
     
     let token: String
     let receivingDate: Date
-    
     var tokenExpiringTime: TimeInterval {
         39600
     }

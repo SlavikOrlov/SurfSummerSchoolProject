@@ -113,7 +113,6 @@ private extension BaseTokenStorage {
             throw Error.unknownError(status: status)
         }
         
-        
         guard status != -25299 else {
             throw Error.keyIsAlreadyInKeyChain
         }

@@ -22,17 +22,32 @@
                             <constraint firstAttribute="width" secondItem="NNR-i5-deR" secondAttribute="height" multiplier="343:326" id="ffI-Sz-shJ"/>
                         </constraints>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nCN-4l-joh">
+                        <rect key="frame" x="274" y="26" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="DzN-r8-ybw"/>
+                            <constraint firstAttribute="width" constant="20" id="fWI-nA-ZNm"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain"/>
+                        <connections>
+                            <action selector="favoriteButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="0Aw-HW-HiE"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="NNR-i5-deR" secondAttribute="trailing" constant="16" id="5HB-RU-Wa7"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="NNR-i5-deR" secondAttribute="bottom" constant="8" id="OMd-g9-sXb"/>
                     <constraint firstItem="NNR-i5-deR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="QNT-Og-y6P"/>
+                    <constraint firstItem="NNR-i5-deR" firstAttribute="trailing" secondItem="nCN-4l-joh" secondAttribute="trailing" constant="10" id="TYM-f2-WGQ"/>
+                    <constraint firstItem="nCN-4l-joh" firstAttribute="top" secondItem="NNR-i5-deR" secondAttribute="top" constant="10" id="WM6-mL-hRP"/>
                     <constraint firstItem="NNR-i5-deR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="avs-XV-JTz"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="cartImageView" destination="NNR-i5-deR" id="Qk5-kN-Sbd"/>
+                <outlet property="favoriteButtonLabel" destination="nCN-4l-joh" id="p0i-xn-e3q"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="206.58482142857142"/>
         </tableViewCell>
