@@ -12,8 +12,8 @@ class MainItemCollectionViewCell: UICollectionViewCell {
     // MARK: - Constants
     
     private enum Constants {
-        static let fillHeartImage = UIImage(named: "heart-fill")
-        static let heartImage = UIImage(named: "heart")
+        static let favoriteTapped = ImagesExtension.favoriteTapped
+        static let favoriteUntapped = ImagesExtension.favoriteUntapped
     }
     // MARK: - Views
     
@@ -28,7 +28,7 @@ class MainItemCollectionViewCell: UICollectionViewCell {
     // MARK: - Calculated
     
     var buttonImage: UIImage? {
-        return isFavorite ? Constants.fillHeartImage : Constants.heartImage
+        return isFavorite ? Constants.favoriteTapped : Constants.favoriteUntapped
     }
     
     // анимацию в отдельный метод (разделить из-зи большого кол-ва ответственности

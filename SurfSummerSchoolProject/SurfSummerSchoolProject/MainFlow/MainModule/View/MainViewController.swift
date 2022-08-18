@@ -10,6 +10,9 @@ import UIKit
 class MainViewController: UIViewController {
     
     // MARK: - Constants
+    private enum ConstantImages {
+        static let searchBar: UIImage? = ImagesExtension.searchBar
+    }
     
     private enum Constants {
         static let horizontalInset: CGFloat = 16
@@ -44,11 +47,19 @@ private extension MainViewController {
 
     func configureApperance() {
         navigationItem.title = "Главная"
-        collectionView.register(UINib(nibName: "\(MainItemCollectionViewCell.self)", bundle: .main),
-                                forCellWithReuseIdentifier: "\(MainItemCollectionViewCell.self)")
+        collectionView.register(
+            UINib(
+                nibName: "\(MainItemCollectionViewCell.self)",
+                bundle: .main),
+                forCellWithReuseIdentifier: "\(MainItemCollectionViewCell.self)")
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.contentInset = .init(top: 10, left: 16, bottom: 10, right: 16)
+        collectionView.contentInset = .init(
+            top: 10,
+            left: 16,
+            bottom: 10,
+            right: 16
+        )
     }
 
     func configureModel() {
@@ -60,7 +71,11 @@ private extension MainViewController {
     }
     // My version searchButtonTap
     func configuresearchButton() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "searchTab"), style: .plain, target: self, action: #selector(searchBarButtonTap))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: ConstantImages.searchBar,
+            style: .plain,
+            target: self,
+            action: #selector(searchBarButtonTap))
     }
 }
     

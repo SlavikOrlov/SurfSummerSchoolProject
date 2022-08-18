@@ -10,6 +10,7 @@ import UIKit
 final class DetailViewController: UIViewController, UIGestureRecognizerDelegate {
     
     //MARK: - Constants
+    private let backArrowImage: UIImage? = ImagesExtension.backArrow
     private let detailImageTableViewCell: String = "\(DetailImageTableViewCell.self)"
     private let detailTitleTableViewCell: String = "\(DetailTitleTableViewCell.self)"
     private let detailTextTableViewCell: String = "\(DetailTextTableViewCell.self)"
@@ -48,7 +49,7 @@ private extension DetailViewController {
     
     func configureNavigationBar() {
         navigationItem.title = model?.title
-        let backButton = UIBarButtonItem(image: UIImage(named: "back-button"),
+        let backButton = UIBarButtonItem(image: backArrowImage,
                                          style: .plain,
                                          target: navigationController,
                                          action: #selector(UINavigationController.popViewController(animated:)))

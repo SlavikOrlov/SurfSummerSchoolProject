@@ -13,7 +13,6 @@ enum TabBarModel {
     case favorite
     case profile
     
-    
     var title: String {
         switch self {
         case .main:
@@ -28,11 +27,11 @@ enum TabBarModel {
     var image: UIImage? {
         switch self {
         case .main:
-            return UIImage(named: "mainTab")
+            return ImagesExtension.mainTab
         case .favorite:
-            return UIImage(named: "favoriteTab")
+            return ImagesExtension.favoriteTab
         case .profile:
-            return UIImage(named: "profileTab")
+            return ImagesExtension.profileTab
         }
     }
     

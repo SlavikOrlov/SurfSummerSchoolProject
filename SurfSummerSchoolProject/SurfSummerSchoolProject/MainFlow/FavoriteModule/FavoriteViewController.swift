@@ -9,7 +9,13 @@ import UIKit
 
 class FavoriteViewController: UIViewController {
     
-    // MARK: Views
+    // MARK: - Constants
+    
+    private enum ConstantImages {
+        static let searchBar: UIImage? = ImagesExtension.searchBar
+    }
+    
+    // MARK: - Views
     
     @IBOutlet private weak var tableView: UITableView!
     
@@ -49,7 +55,11 @@ private extension FavoriteViewController {
     }
     
     func configuresearchButton() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "searchTab"), style: .plain, target: self, action: #selector(searchBarButtonTap))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: ConstantImages.searchBar,
+            style: .plain,
+            target: self,
+            action: #selector(searchBarButtonTap))
     }
 }
 // MARK: - UITableViewDataSource, UITableViewDelegate

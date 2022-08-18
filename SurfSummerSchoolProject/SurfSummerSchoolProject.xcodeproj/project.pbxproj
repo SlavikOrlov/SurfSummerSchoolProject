@@ -50,6 +50,7 @@
 		55EABA3228A4249B00D608B1 /* BaseTokenStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EABA3128A4249B00D608B1 /* BaseTokenStorage.swift */; };
 		55EABA3828A42A0D00D608B1 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EABA3728A42A0D00D608B1 /* ImageLoader.swift */; };
 		55EABA3A28A42A1800D608B1 /* UIImageView+ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EABA3928A42A1800D608B1 /* UIImageView+ImageLoader.swift */; };
+		55EFF10028AECF36009633BF /* ImagesExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EFF0FF28AECF36009633BF /* ImagesExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +99,7 @@
 		55EABA3128A4249B00D608B1 /* BaseTokenStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTokenStorage.swift; sourceTree = "<group>"; };
 		55EABA3728A42A0D00D608B1 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		55EABA3928A42A1800D608B1 /* UIImageView+ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+ImageLoader.swift"; sourceTree = "<group>"; };
+		55EFF0FF28AECF36009633BF /* ImagesExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 		558DB181289A57D900CF2B05 /* SurfSummerSchoolProject */ = {
 			isa = PBXGroup;
 			children = (
+				55EFF0FD28AECEF6009633BF /* Extension */,
 				55EABA1528A4204600D608B1 /* Services */,
 				558DB182289A57D900CF2B05 /* AppDelegate.swift */,
 				558DB1A6289A725900CF2B05 /* Application */,
@@ -370,6 +373,22 @@
 			path = ImageLoader;
 			sourceTree = "<group>";
 		};
+		55EFF0FD28AECEF6009633BF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				55EFF0FE28AECF13009633BF /* ImagesExtension */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		55EFF0FE28AECF13009633BF /* ImagesExtension */ = {
+			isa = PBXGroup;
+			children = (
+				55EFF0FF28AECF36009633BF /* ImagesExtension.swift */,
+			);
+			path = ImagesExtension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -453,6 +472,7 @@
 				55EABA1D28A421A100D608B1 /* BaseNetworkTask.swift in Sources */,
 				55EAB9FE289FE2BD00D608B1 /* DetailImageTableViewCell.swift in Sources */,
 				55EABA3828A42A0D00D608B1 /* ImageLoader.swift in Sources */,
+				55EFF10028AECF36009633BF /* ImagesExtension.swift in Sources */,
 				55EABA03289FE5F200D608B1 /* DetailTitleTableViewCell.swift in Sources */,
 				55EABA0F28A02C1800D608B1 /* FavoriteItemModel.swift in Sources */,
 				55EAB9ED289EF5FF00D608B1 /* MainModel.swift in Sources */,
