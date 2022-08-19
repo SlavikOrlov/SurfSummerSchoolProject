@@ -11,8 +11,8 @@ final class DetailImageTableViewCell: UITableViewCell {
     
     //MARK: - Constants
     private enum Constants {
-        static let favoriteTapped = UIImage(named: "favoriteTapped")
-        static let favoriteUntapped = UIImage(named: "favoriteUntapped")
+        static let favoriteTapped = ImagesExtension.favoriteTapped
+        static let favoriteUntapped = ImagesExtension.favoriteUntapped
     }
     
     // MARK: - Views

@@ -12,8 +12,8 @@ class FavoriteViewCell: UITableViewCell {
     // MARK: - Constants
     
     private enum Constants {
-        static let fillHeartImage = UIImage(named: "heart-fill")
-        static let heartImage = UIImage(named: "heart")
+        static let favoriteTapped = ImagesExtension.favoriteTapped
+        static let favoriteUntapped = ImagesExtension.favoriteUntapped
     }
     // MARK: - Views
     
@@ -33,7 +33,7 @@ class FavoriteViewCell: UITableViewCell {
     
     var isFavorite: Bool = false {
         didSet {
-            let image = isFavorite ? Constants.fillHeartImage : Constants.heartImage
+            let image = isFavorite ? Constants.favoriteTapped : Constants.favoriteUntapped
             favoriteButton.setImage(image , for: .normal)
         }
     }

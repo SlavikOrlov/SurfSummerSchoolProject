@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="188" id="KGk-i7-Jjw" userLabel="Profile View Table Cell" customClass="ProfileViewTableCell" customModule="SurfSummerSchoolProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="335" height="188"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="335" height="188"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="19n-RF-ZsF">
+                        <rect key="frame" x="16" y="16" width="154" height="154"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="154" id="aPN-dX-x5G"/>
+                            <constraint firstAttribute="height" constant="154" identifier="1:1" id="rQ8-he-wSg"/>
+                            <constraint firstAttribute="width" secondItem="19n-RF-ZsF" secondAttribute="height" multiplier="1:1" id="sci-ep-jNW"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вячеслав" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVN-my-foz">
+                        <rect key="frame" x="186" y="16" width="79" height="22"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Орлов" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Diw-fG-Og7">
+                        <rect key="frame" x="186" y="38" width="54" height="22"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6a-aB-Tbw">
+                        <rect key="frame" x="186" y="68" width="138" height="46"/>
+                        <string key="text">«Светлое будущее живет 
+в вечности»</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="19n-RF-ZsF" secondAttribute="bottom" constant="10" id="3FW-RC-rOK"/>
+                    <constraint firstItem="j6a-aB-Tbw" firstAttribute="leading" secondItem="19n-RF-ZsF" secondAttribute="trailing" constant="16" id="3Zn-Fg-yRh"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Diw-fG-Og7" secondAttribute="trailing" constant="16" id="FZY-c5-Qm9"/>
+                    <constraint firstItem="aVN-my-foz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="My7-LG-BPH"/>
+                    <constraint firstItem="Diw-fG-Og7" firstAttribute="top" secondItem="aVN-my-foz" secondAttribute="bottom" id="OFO-77-2Kq"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aVN-my-foz" secondAttribute="trailing" constant="16" id="SEa-yK-2ih"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="j6a-aB-Tbw" secondAttribute="trailing" constant="16" id="WAE-j6-nh8"/>
+                    <constraint firstItem="19n-RF-ZsF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="X7D-rM-NRf"/>
+                    <constraint firstItem="j6a-aB-Tbw" firstAttribute="top" secondItem="Diw-fG-Og7" secondAttribute="bottom" constant="8" id="dZw-bc-85I"/>
+                    <constraint firstItem="19n-RF-ZsF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="k5N-zA-axb"/>
+                    <constraint firstItem="aVN-my-foz" firstAttribute="leading" secondItem="19n-RF-ZsF" secondAttribute="trailing" constant="16" id="nDp-Q9-BhD"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="j6a-aB-Tbw" secondAttribute="bottom" constant="16" id="oBJ-Rj-4Co"/>
+                    <constraint firstItem="Diw-fG-Og7" firstAttribute="leading" secondItem="19n-RF-ZsF" secondAttribute="trailing" constant="16" id="zKP-JD-bn4"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="profileFirstNameLabel" destination="aVN-my-foz" id="mLf-7W-5Do"/>
+                <outlet property="profileImageView" destination="19n-RF-ZsF" id="Ih6-vL-Hfg"/>
+                <outlet property="profileSecondNameLabel" destination="Diw-fG-Og7" id="cPw-Tb-TND"/>
+                <outlet property="profileTextLabel" destination="j6a-aB-Tbw" id="SwQ-G5-rjm"/>
+            </connections>
+            <point key="canvasLocation" x="148.55072463768118" y="145.98214285714286"/>
+        </tableViewCell>
+    </objects>
+</document>
