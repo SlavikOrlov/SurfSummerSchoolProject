@@ -8,6 +8,9 @@
 import UIKit
 
 struct ImagesExtension {
+    
+    //MARK: - Constants
+    
     static let backArrow = UIImage(named: "back-button")
     static let mainTab = UIImage(named: "mainTab")
     static let favoriteTab = UIImage(named: "favoriteTab")

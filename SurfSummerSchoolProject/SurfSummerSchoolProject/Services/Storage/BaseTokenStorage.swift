@@ -83,6 +83,8 @@ struct BaseTokenStorage: TokenStorage {
     }
 }
 
+// MARK: - Privat Methods
+
 private extension BaseTokenStorage {
     
     enum Error: Swift.Error {

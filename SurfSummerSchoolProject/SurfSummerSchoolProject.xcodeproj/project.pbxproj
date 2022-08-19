@@ -55,6 +55,9 @@
 		55EFF10528AFFC70009633BF /* ProfileViewTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55EFF10328AFFC70009633BF /* ProfileViewTableCell.xib */; };
 		55EFF10828AFFCAF009633BF /* ProfileTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EFF10628AFFCAF009633BF /* ProfileTitleTableViewCell.swift */; };
 		55EFF10928AFFCAF009633BF /* ProfileTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55EFF10728AFFCAF009633BF /* ProfileTitleTableViewCell.xib */; };
+		55EFF10C28B00EFD009633BF /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EFF10B28B00EFD009633BF /* ProfileModel.swift */; };
+		55EFF10F28B010B7009633BF /* ProfileSrorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EFF10E28B010B7009633BF /* ProfileSrorage.swift */; };
+		55EFF11128B010CA009633BF /* BaseProfileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EFF11028B010CA009633BF /* BaseProfileStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +111,9 @@
 		55EFF10328AFFC70009633BF /* ProfileViewTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewTableCell.xib; sourceTree = "<group>"; };
 		55EFF10628AFFCAF009633BF /* ProfileTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTitleTableViewCell.swift; sourceTree = "<group>"; };
 		55EFF10728AFFCAF009633BF /* ProfileTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTitleTableViewCell.xib; sourceTree = "<group>"; };
+		55EFF10B28B00EFD009633BF /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		55EFF10E28B010B7009633BF /* ProfileSrorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSrorage.swift; sourceTree = "<group>"; };
+		55EFF11028B010CA009633BF /* BaseProfileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseProfileStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +181,8 @@
 		558DB1A0289A71D500CF2B05 /* ProfileModule */ = {
 			isa = PBXGroup;
 			children = (
+				55EFF10D28B01089009633BF /* ProfileStorage */,
+				55EFF10A28B00EF0009633BF /* Model */,
 				55EFF10128AFFC0E009633BF /* Cells */,
 				558DB19A289A6A7600CF2B05 /* ProfileViewController.swift */,
 				558DB19B289A6A7600CF2B05 /* ProfileViewController.xib */,
@@ -409,6 +417,23 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		55EFF10A28B00EF0009633BF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				55EFF10B28B00EFD009633BF /* ProfileModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		55EFF10D28B01089009633BF /* ProfileStorage */ = {
+			isa = PBXGroup;
+			children = (
+				55EFF10E28B010B7009633BF /* ProfileSrorage.swift */,
+				55EFF11028B010CA009633BF /* BaseProfileStorage.swift */,
+			);
+			path = ProfileStorage;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -494,6 +519,7 @@
 				55EABA1D28A421A100D608B1 /* BaseNetworkTask.swift in Sources */,
 				55EAB9FE289FE2BD00D608B1 /* DetailImageTableViewCell.swift in Sources */,
 				55EABA3828A42A0D00D608B1 /* ImageLoader.swift in Sources */,
+				55EFF10F28B010B7009633BF /* ProfileSrorage.swift in Sources */,
 				55EFF10028AECF36009633BF /* ImagesExtension.swift in Sources */,
 				55EABA03289FE5F200D608B1 /* DetailTitleTableViewCell.swift in Sources */,
 				55EABA0F28A02C1800D608B1 /* FavoriteItemModel.swift in Sources */,
@@ -503,9 +529,11 @@
 				55EABA2E28A4243E00D608B1 /* TokenStorage.swift in Sources */,
 				55EABA3A28A42A1800D608B1 /* UIImageView+ImageLoader.swift in Sources */,
 				558DB1A9289A72CE00CF2B05 /* TabBarModel.swift in Sources */,
+				55EFF11128B010CA009633BF /* BaseProfileStorage.swift in Sources */,
 				55EFF10828AFFCAF009633BF /* ProfileTitleTableViewCell.swift in Sources */,
 				55EABA0B289FF95400D608B1 /* DetailItemModel.swift in Sources */,
 				55EABA0D28A02BF300D608B1 /* FavoriteModel.swift in Sources */,
+				55EFF10C28B00EFD009633BF /* ProfileModel.swift in Sources */,
 				55EABA08289FF58A00D608B1 /* DetailTextTableViewCell.swift in Sources */,
 				558DB1B4289BAD8E00CF2B05 /* SearchViewController.swift in Sources */,
 				558DB19C289A6A7600CF2B05 /* ProfileViewController.swift in Sources */,
