@@ -51,6 +51,10 @@
 		55EABA3828A42A0D00D608B1 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EABA3728A42A0D00D608B1 /* ImageLoader.swift */; };
 		55EABA3A28A42A1800D608B1 /* UIImageView+ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EABA3928A42A1800D608B1 /* UIImageView+ImageLoader.swift */; };
 		55EFF10028AECF36009633BF /* ImagesExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EFF0FF28AECF36009633BF /* ImagesExtension.swift */; };
+		55EFF10428AFFC70009633BF /* ProfileViewTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EFF10228AFFC70009633BF /* ProfileViewTableCell.swift */; };
+		55EFF10528AFFC70009633BF /* ProfileViewTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55EFF10328AFFC70009633BF /* ProfileViewTableCell.xib */; };
+		55EFF10828AFFCAF009633BF /* ProfileTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EFF10628AFFCAF009633BF /* ProfileTitleTableViewCell.swift */; };
+		55EFF10928AFFCAF009633BF /* ProfileTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55EFF10728AFFCAF009633BF /* ProfileTitleTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +104,10 @@
 		55EABA3728A42A0D00D608B1 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		55EABA3928A42A1800D608B1 /* UIImageView+ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+ImageLoader.swift"; sourceTree = "<group>"; };
 		55EFF0FF28AECF36009633BF /* ImagesExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesExtension.swift; sourceTree = "<group>"; };
+		55EFF10228AFFC70009633BF /* ProfileViewTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewTableCell.swift; sourceTree = "<group>"; };
+		55EFF10328AFFC70009633BF /* ProfileViewTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewTableCell.xib; sourceTree = "<group>"; };
+		55EFF10628AFFCAF009633BF /* ProfileTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTitleTableViewCell.swift; sourceTree = "<group>"; };
+		55EFF10728AFFCAF009633BF /* ProfileTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTitleTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +175,7 @@
 		558DB1A0289A71D500CF2B05 /* ProfileModule */ = {
 			isa = PBXGroup;
 			children = (
+				55EFF10128AFFC0E009633BF /* Cells */,
 				558DB19A289A6A7600CF2B05 /* ProfileViewController.swift */,
 				558DB19B289A6A7600CF2B05 /* ProfileViewController.xib */,
 			);
@@ -389,6 +398,17 @@
 			path = ImagesExtension;
 			sourceTree = "<group>";
 		};
+		55EFF10128AFFC0E009633BF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				55EFF10228AFFC70009633BF /* ProfileViewTableCell.swift */,
+				55EFF10328AFFC70009633BF /* ProfileViewTableCell.xib */,
+				55EFF10628AFFCAF009633BF /* ProfileTitleTableViewCell.swift */,
+				55EFF10728AFFCAF009633BF /* ProfileTitleTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -450,12 +470,14 @@
 				55EABA1428A02CA400D608B1 /* FavoriteViewCell.xib in Resources */,
 				558DB18F289A57DB00CF2B05 /* LaunchScreen.storyboard in Resources */,
 				55EAB9FF289FE2BD00D608B1 /* DetailImageTableViewCell.xib in Resources */,
+				55EFF10528AFFC70009633BF /* ProfileViewTableCell.xib in Resources */,
 				558DB18C289A57DB00CF2B05 /* Assets.xcassets in Resources */,
 				55EABA04289FE5F200D608B1 /* DetailTitleTableViewCell.xib in Resources */,
 				558DB1B5289BAD8E00CF2B05 /* SearchViewController.xib in Resources */,
 				55EAB9F9289FDE3A00D608B1 /* DetailViewController.xib in Resources */,
 				55EABA09289FF58A00D608B1 /* DetailTextTableViewCell.xib in Resources */,
 				55EAB9F4289F006E00D608B1 /* MainItemCollectionViewCell.xib in Resources */,
+				55EFF10928AFFCAF009633BF /* ProfileTitleTableViewCell.xib in Resources */,
 				558DB1A5289A720D00CF2B05 /* FavoriteViewController.xib in Resources */,
 				558DB19D289A6A7600CF2B05 /* ProfileViewController.xib in Resources */,
 				558DB199289A68BC00CF2B05 /* MainViewController.xib in Resources */,
@@ -481,11 +503,13 @@
 				55EABA2E28A4243E00D608B1 /* TokenStorage.swift in Sources */,
 				55EABA3A28A42A1800D608B1 /* UIImageView+ImageLoader.swift in Sources */,
 				558DB1A9289A72CE00CF2B05 /* TabBarModel.swift in Sources */,
+				55EFF10828AFFCAF009633BF /* ProfileTitleTableViewCell.swift in Sources */,
 				55EABA0B289FF95400D608B1 /* DetailItemModel.swift in Sources */,
 				55EABA0D28A02BF300D608B1 /* FavoriteModel.swift in Sources */,
 				55EABA08289FF58A00D608B1 /* DetailTextTableViewCell.swift in Sources */,
 				558DB1B4289BAD8E00CF2B05 /* SearchViewController.swift in Sources */,
 				558DB19C289A6A7600CF2B05 /* ProfileViewController.swift in Sources */,
+				55EFF10428AFFC70009633BF /* ProfileViewTableCell.swift in Sources */,
 				55EABA1B28A4211800D608B1 /* NetworkMethod.swift in Sources */,
 				55EABA3028A4244C00D608B1 /* TokenContainer.swift in Sources */,
 				55EABA2B28A423F900D608B1 /* PicturesService.swift in Sources */,
