@@ -58,6 +58,7 @@
 		55EFF10C28B00EFD009633BF /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EFF10B28B00EFD009633BF /* ProfileModel.swift */; };
 		55EFF10F28B010B7009633BF /* ProfileSrorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EFF10E28B010B7009633BF /* ProfileSrorage.swift */; };
 		55EFF11128B010CA009633BF /* BaseProfileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EFF11028B010CA009633BF /* BaseProfileStorage.swift */; };
+		55EFF11428B024A7009633BF /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EFF11328B024A7009633BF /* ColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +115,7 @@
 		55EFF10B28B00EFD009633BF /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		55EFF10E28B010B7009633BF /* ProfileSrorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSrorage.swift; sourceTree = "<group>"; };
 		55EFF11028B010CA009633BF /* BaseProfileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseProfileStorage.swift; sourceTree = "<group>"; };
+		55EFF11328B024A7009633BF /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -393,6 +395,7 @@
 		55EFF0FD28AECEF6009633BF /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				55EFF11228B02494009633BF /* ColorExtension */,
 				55EFF0FE28AECF13009633BF /* ImagesExtension */,
 			);
 			path = Extension;
@@ -432,6 +435,14 @@
 				55EFF11028B010CA009633BF /* BaseProfileStorage.swift */,
 			);
 			path = ProfileStorage;
+			sourceTree = "<group>";
+		};
+		55EFF11228B02494009633BF /* ColorExtension */ = {
+			isa = PBXGroup;
+			children = (
+				55EFF11328B024A7009633BF /* ColorExtension.swift */,
+			);
+			path = ColorExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -553,6 +564,7 @@
 				55EABA2928A423F000D608B1 /* PictureResponseModel.swift in Sources */,
 				55EAB9F3289F006E00D608B1 /* MainItemCollectionViewCell.swift in Sources */,
 				558DB198289A68BC00CF2B05 /* MainViewController.swift in Sources */,
+				55EFF11428B024A7009633BF /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

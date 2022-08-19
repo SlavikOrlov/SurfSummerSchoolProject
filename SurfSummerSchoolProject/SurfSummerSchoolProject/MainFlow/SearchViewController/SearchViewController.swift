@@ -44,7 +44,7 @@ private extension SearchViewController {
                                              target: navigationController,
                                              action: #selector(UINavigationController.popViewController(animated:)))
             navigationItem.leftBarButtonItem = backButton
-            navigationItem.leftBarButtonItem?.tintColor = .black
+            navigationItem.leftBarButtonItem?.tintColor = ColorsExtension.black
             navigationController?.interactivePopGestureRecognizer?.delegate = self
         }
     }

@@ -31,7 +31,7 @@ final class DetailTextTableViewCell: UITableViewCell {
     private func configureAppearance() {
         selectionStyle = .none
         contentLabel.font = .systemFont(ofSize: 12, weight: .light)
-        contentLabel.textColor = .black
+        contentLabel.textColor = ColorsExtension.black
         contentLabel.numberOfLines = 0
     }
     

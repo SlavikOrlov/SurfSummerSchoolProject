@@ -24,7 +24,6 @@ class MainViewController: UIViewController {
     
     private let model: MainModel = .init()
     
-    
     // MARK: - Views
     
     @IBOutlet private weak var collectionView: UICollectionView!
@@ -79,9 +78,6 @@ private extension MainViewController {
     }
 }
     
-    
-    
-
 // MARK: - UICollection
 
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -89,7 +85,6 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return model.items.count
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(MainItemCollectionViewCell.self)", for: indexPath)

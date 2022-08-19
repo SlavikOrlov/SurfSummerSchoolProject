@@ -39,7 +39,7 @@ final class DetailTitleTableViewCell: UITableViewCell {
         selectionStyle = .none
         cartTitleLabel.font = .systemFont(ofSize: 16)
         dateLabel.font = .systemFont(ofSize: 10)
-        dateLabel.textColor = UIColor(displayP3Red: 0xB3 / 255, green: 0xB3 / 255, blue: 0xB3 / 255, alpha: 1)
+        dateLabel.textColor = ColorsExtension.black
     }
     
 }

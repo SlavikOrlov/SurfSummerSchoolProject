@@ -31,10 +31,12 @@ struct BaseProfileStorage: ProfileStorage {
         let profile = try getProfileFromStorage()
         return profile
     }
+    
     func set(profile: ProfileModel) throws {
         removeProfileFromStorage()
         saveProfileInStorage(profile: profile)
     }
+    
     func removeProfile() throws {
         removeProfileFromStorage()
     }
@@ -49,17 +51,32 @@ private extension BaseProfileStorage {
     }
     
     func getProfileFromStorage() throws -> ProfileModel {
-        guard let profileAvatar = unprotectedStorage.value(forKey: avatarKey) as? String,
-              let profileFirstName = unprotectedStorage.value(forKey: firstNameKey) as? String,
-              let profileSecondName = unprotectedStorage.value(forKey: secondNameKey) as? String,
-              let profileAbout = unprotectedStorage.value(forKey: aboutKey) as? String,
-              let profileCity = unprotectedStorage.value(forKey: cityKey) as? String,
-              let profilePhone = unprotectedStorage.value(forKey: phoneKey) as? String,
-              let profileEmail = unprotectedStorage.value(forKey: emailKey) as? String
+        guard let profileAvatar =
+                unprotectedStorage.value(forKey: avatarKey) as? String,
+              let profileFirstName =
+                unprotectedStorage.value(forKey: firstNameKey) as? String,
+              let profileSecondName =
+                unprotectedStorage.value(forKey: secondNameKey) as? String,
+              let profileAbout =
+                unprotectedStorage.value(forKey: aboutKey) as? String,
+              let profileCity =
+                unprotectedStorage.value(forKey: cityKey) as? String,
+              let profilePhone =
+                unprotectedStorage.value(forKey: phoneKey) as? String,
+              let profileEmail =
+                unprotectedStorage.value(forKey: emailKey) as? String
         else {
             throw Error.profileWasNotFound
         }
-        let profile = ProfileModel(avatar: profileAvatar, firstName: profileFirstName, secondName: profileSecondName, about: profileAbout, city: profileCity, phone: profilePhone, email: profileEmail)
+        let profile = ProfileModel(
+            avatar: profileAvatar,
+            firstName: profileFirstName,
+            secondName: profileSecondName,
+            about: profileAbout,
+            city: profileCity,
+            phone: profilePhone,
+            email: profileEmail
+        )
         return profile
     }
     

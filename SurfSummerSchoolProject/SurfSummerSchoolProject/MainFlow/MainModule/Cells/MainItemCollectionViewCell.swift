@@ -15,6 +15,7 @@ class MainItemCollectionViewCell: UICollectionViewCell {
         static let favoriteTapped = ImagesExtension.favoriteTapped
         static let favoriteUntapped = ImagesExtension.favoriteUntapped
     }
+    
     // MARK: - Views
     
     @IBOutlet private weak var titleLabel: UILabel!
@@ -82,9 +83,9 @@ class MainItemCollectionViewCell: UICollectionViewCell {
 private extension MainItemCollectionViewCell {
     
     func configureAppearance() {
-        titleLabel.textColor = .black
+        titleLabel.textColor = ColorsExtension.black
         titleLabel.font = .systemFont(ofSize: 12)
         imageView.layer.cornerRadius = 12
-        favoriteButton.tintColor = .white
+        favoriteButton.tintColor = ColorsExtension.white
     }
 }
