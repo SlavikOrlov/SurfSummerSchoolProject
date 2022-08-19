@@ -31,7 +31,7 @@ class FavoriteViewController: UIViewController {
         model.getPosts()
     }
     
-    // MARK: Actions
+    // MARK: - Actions
     
     @objc func searchBarButtonTap() {
         navigationController?.pushViewController(SearchViewController(), animated: true)

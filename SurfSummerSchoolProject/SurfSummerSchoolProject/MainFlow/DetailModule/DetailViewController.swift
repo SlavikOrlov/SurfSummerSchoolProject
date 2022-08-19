@@ -52,7 +52,8 @@ private extension DetailViewController {
         let backButton = UIBarButtonItem(image: backArrowImage,
                                          style: .plain,
                                          target: navigationController,
-                                         action: #selector(UINavigationController.popViewController(animated:)))
+                                         action: #selector(UINavigationController.popViewController(animated:))
+        )
         navigationItem.leftBarButtonItem = backButton
         navigationItem.leftBarButtonItem?.tintColor = .black
         navigationController?.interactivePopGestureRecognizer?.delegate = self
@@ -67,7 +68,6 @@ private extension DetailViewController {
             tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
-        // вынести в extension!!!
         tableView.register(UINib(nibName: detailImageTableViewCell, bundle: .main), forCellReuseIdentifier: detailImageTableViewCell)
         tableView.register(UINib(nibName: detailTitleTableViewCell, bundle: .main), forCellReuseIdentifier: detailTitleTableViewCell)
         tableView.register(UINib(nibName: detailTextTableViewCell, bundle: .main), forCellReuseIdentifier: detailTextTableViewCell)

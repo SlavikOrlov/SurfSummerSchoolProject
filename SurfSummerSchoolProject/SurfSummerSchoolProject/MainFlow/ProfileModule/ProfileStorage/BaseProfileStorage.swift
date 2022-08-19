@@ -19,7 +19,7 @@ struct BaseProfileStorage: ProfileStorage {
     
     private let avatarKey: String = "avatar"
     private let firstNameKey: String = "firstName"
-    private let lastNameKey: String = "lastName"
+    private let secondNameKey: String = "secondName"
     private let aboutKey: String = "about"
     private let cityKey: String = "city"
     private let phoneKey: String = "phone"
@@ -51,7 +51,7 @@ private extension BaseProfileStorage {
     func getProfileFromStorage() throws -> ProfileModel {
         guard let profileAvatar = unprotectedStorage.value(forKey: avatarKey) as? String,
               let profileFirstName = unprotectedStorage.value(forKey: firstNameKey) as? String,
-              let profileLastName = unprotectedStorage.value(forKey: lastNameKey) as? String,
+              let profileSecondName = unprotectedStorage.value(forKey: secondNameKey) as? String,
               let profileAbout = unprotectedStorage.value(forKey: aboutKey) as? String,
               let profileCity = unprotectedStorage.value(forKey: cityKey) as? String,
               let profilePhone = unprotectedStorage.value(forKey: phoneKey) as? String,
@@ -59,14 +59,14 @@ private extension BaseProfileStorage {
         else {
             throw Error.profileWasNotFound
         }
-        let profile = ProfileModel(avatar: profileAvatar, firstName: profileFirstName, lastName: profileLastName, about: profileAbout, city: profileCity, phone: profilePhone, email: profileEmail)
+        let profile = ProfileModel(avatar: profileAvatar, firstName: profileFirstName, secondName: profileSecondName, about: profileAbout, city: profileCity, phone: profilePhone, email: profileEmail)
         return profile
     }
     
     func saveProfileInStorage(profile: ProfileModel) {
         unprotectedStorage.set(profile.avatar, forKey: avatarKey)
         unprotectedStorage.set(profile.firstName, forKey: firstNameKey)
-        unprotectedStorage.set(profile.lastName, forKey: lastNameKey)
+        unprotectedStorage.set(profile.secondName, forKey: secondNameKey)
         unprotectedStorage.set(profile.about, forKey: aboutKey)
         unprotectedStorage.set(profile.city, forKey: cityKey)
         unprotectedStorage.set(profile.phone, forKey: phoneKey)
@@ -76,7 +76,7 @@ private extension BaseProfileStorage {
     func removeProfileFromStorage() {
         unprotectedStorage.set(nil, forKey: avatarKey)
         unprotectedStorage.set(nil, forKey: firstNameKey)
-        unprotectedStorage.set(nil, forKey: lastNameKey)
+        unprotectedStorage.set(nil, forKey: secondNameKey)
         unprotectedStorage.set(nil, forKey: aboutKey)
         unprotectedStorage.set(nil, forKey: cityKey)
         unprotectedStorage.set(nil, forKey: phoneKey)

@@ -11,7 +11,7 @@ struct ProfileModel: Decodable {
     
     let avatar: String
     let firstName: String
-    let lastName: String
+    let secondName: String
     let about: String
     let city: String
     let phone: String
@@ -32,7 +32,7 @@ struct ProfileExample {
             self.profileModel = ProfileModel(
                 avatar: "",
                 firstName: "Вячеслав",
-                lastName: "Орлов",
+                secondName: "Орлов",
                 about: "Что-то пошло не так!",
                 city: "Санкт-Петербург",
                 phone: "+7 (9**) *** ** **",
