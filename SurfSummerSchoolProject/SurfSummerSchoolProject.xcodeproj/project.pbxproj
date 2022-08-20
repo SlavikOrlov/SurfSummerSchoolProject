@@ -65,6 +65,7 @@
 		55EFF12728B0F5DD009633BF /* LoadErrorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55EFF12528B0F5DC009633BF /* LoadErrorViewController.xib */; };
 		55EFF12C28B0FDAF009633BF /* SnackbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EFF12B28B0FDAF009633BF /* SnackbarView.swift */; };
 		55EFF12E28B0FDBA009633BF /* SnackbarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EFF12D28B0FDBA009633BF /* SnackbarModel.swift */; };
+		55EFF13428B15DAA009633BF /* ButtonActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EFF13328B15DAA009633BF /* ButtonActivityIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +129,7 @@
 		55EFF12528B0F5DC009633BF /* LoadErrorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadErrorViewController.xib; sourceTree = "<group>"; };
 		55EFF12B28B0FDAF009633BF /* SnackbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackbarView.swift; sourceTree = "<group>"; };
 		55EFF12D28B0FDBA009633BF /* SnackbarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackbarModel.swift; sourceTree = "<group>"; };
+		55EFF13328B15DAA009633BF /* ButtonActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonActivityIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -397,6 +399,7 @@
 		55EFF0FD28AECEF6009633BF /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				55EFF13228B15D71009633BF /* ButtonActivity */,
 				55EFF12028B0E410009633BF /* AllertMassage */,
 				55EFF11228B02494009633BF /* ColorExtension */,
 				55EFF0FE28AECF13009633BF /* ImagesExtension */,
@@ -575,6 +578,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		55EFF13228B15D71009633BF /* ButtonActivity */ = {
+			isa = PBXGroup;
+			children = (
+				55EFF13328B15DAA009633BF /* ButtonActivityIndicator.swift */,
+			);
+			path = ButtonActivity;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -691,6 +702,7 @@
 				55EABA3228A4249B00D608B1 /* BaseTokenStorage.swift in Sources */,
 				55EFF12628B0F5DC009633BF /* LoadErrorViewController.swift in Sources */,
 				55EABA1F28A4229B00D608B1 /* EmptyModel.swift in Sources */,
+				55EFF13428B15DAA009633BF /* ButtonActivityIndicator.swift in Sources */,
 				558DB1A4289A720D00CF2B05 /* FavoriteViewController.swift in Sources */,
 				55EABA1928A4207500D608B1 /* NetworkTask.swift in Sources */,
 				558DB1AB289A91A100CF2B05 /* TabBarConfigurator.swift in Sources */,
