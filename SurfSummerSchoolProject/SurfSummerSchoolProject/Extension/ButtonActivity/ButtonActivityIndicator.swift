@@ -10,10 +10,14 @@ import UIKit
 
 struct ButtonActivityIndicator {
     
+    // MARK: - Constants
+
     var button: UIButton
     let startButtonText: String
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
+    // MARK: - Properties
+
     func showDownloadButton() {
         button.setTitle("", for: .normal)
         configureActivityIndicator()
@@ -25,6 +29,8 @@ struct ButtonActivityIndicator {
         activityIndicator.startAnimating()
     }
     
+    // MARK: - Privat Methods
+
     private func configureActivityIndicator() {
         activityIndicator.hidesWhenStopped = true
         activityIndicator.color = ColorsExtension.lightGray
