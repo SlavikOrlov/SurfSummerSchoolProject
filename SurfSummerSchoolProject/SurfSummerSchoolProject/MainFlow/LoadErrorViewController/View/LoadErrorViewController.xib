@@ -63,7 +63,7 @@
                 <constraint firstItem="agr-uU-viR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="iy6-nL-cWl"/>
                 <constraint firstItem="agr-uU-viR" firstAttribute="top" secondItem="SWu-WM-0LM" secondAttribute="bottom" constant="16" id="q3G-Db-Lzc"/>
             </constraints>
-            <point key="canvasLocation" x="137.68115942028987" y="113.83928571428571"/>
+            <point key="canvasLocation" x="133" y="215"/>
         </view>
     </objects>
     <resources>

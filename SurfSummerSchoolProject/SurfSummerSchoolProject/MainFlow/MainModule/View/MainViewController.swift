@@ -90,7 +90,7 @@ private extension MainViewController {
             image: ConstantImages.searchBar,
             style: .plain,
             target: self,
-            action: #selector(enterSearchVC(sender:))
+            action: #selector(enterSearchViewController(sender:))
         )
         navigationItem.rightBarButtonItem = searchButton
         navigationItem.rightBarButtonItem?.tintColor = ColorsExtension.black
@@ -147,9 +147,9 @@ private extension MainViewController {
     
     // MARK: - Actions
     
-    @objc func enterSearchVC(sender: UIBarButtonItem) {
-        let vc = SearchViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+    @objc func enterSearchViewController(sender: UIBarButtonItem) {
+        let searchViewController = SearchViewController()
+        self.navigationController?.pushViewController(searchViewController, animated: true)
     }
     
     @objc func pullToRefresh(_ sender: AnyObject) {
