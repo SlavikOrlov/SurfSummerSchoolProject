@@ -20,7 +20,7 @@ final class DetailImageTableViewCell: UITableViewCell {
     // MARK: - Views
     
     @IBOutlet private weak var cartImageView: UIImageView!
-    @IBOutlet weak var favoriteButtonLabel: UIButton!
+    @IBOutlet private weak var favoriteButtonLabel: UIButton!
     
     // MARK: - Events
 
