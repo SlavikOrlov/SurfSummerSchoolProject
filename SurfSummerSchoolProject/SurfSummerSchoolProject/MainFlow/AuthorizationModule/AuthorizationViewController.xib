@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AuthorizationViewController" customModule="SurfSummerSchoolProject" customModuleProvider="target">
+            <connections>
+                <outlet property="loginButton" destination="Ulr-ht-1SB" id="ajz-CX-ObX"/>
+                <outlet property="loginTextField" destination="aZ7-si-vXZ" id="Pgk-8o-IqT"/>
+                <outlet property="passwordTextField" destination="NmH-Og-W8T" id="8yP-JL-8Uw"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="surfLogoBackground" translatesAutoresizingMaskIntoConstraints="NO" id="is4-TJ-3G9">
+                    <rect key="frame" x="-40" y="394" width="234" height="234"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="is4-TJ-3G9" secondAttribute="height" multiplier="8:8" id="A2D-X8-jfy"/>
+                    </constraints>
+                </imageView>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="     Логин" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aZ7-si-vXZ">
+                    <rect key="frame" x="16" y="124" width="382" height="55"/>
+                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="1IW-8O-UhK"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="     Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NmH-Og-W8T">
+                    <rect key="frame" x="16" y="195" width="382" height="55"/>
+                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="G2K-Pj-ZyD"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ulr-ht-1SB">
+                    <rect key="frame" x="16" y="283" width="382" height="48"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="dz4-Ll-Mr5"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Войти">
+                        <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="loginButtonAction:" destination="-1" eventType="touchUpInside" id="hpa-WT-TgK"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="NmH-Og-W8T" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="3Sg-K5-rBW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ulr-ht-1SB" secondAttribute="trailing" constant="16" id="EZG-Pk-Rdl"/>
+                <constraint firstItem="NmH-Og-W8T" firstAttribute="top" secondItem="aZ7-si-vXZ" secondAttribute="bottom" constant="16" id="Kyw-fJ-Bxc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aZ7-si-vXZ" secondAttribute="trailing" constant="16" id="MWL-5h-chz"/>
+                <constraint firstItem="Ulr-ht-1SB" firstAttribute="top" secondItem="NmH-Og-W8T" secondAttribute="bottom" constant="33" id="Zyu-Jh-h3T"/>
+                <constraint firstItem="is4-TJ-3G9" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="350" id="aGt-FI-I4c"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NmH-Og-W8T" secondAttribute="trailing" constant="16" id="cjv-Ts-bWh"/>
+                <constraint firstItem="aZ7-si-vXZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="80" id="dvs-Dk-0t6"/>
+                <constraint firstItem="is4-TJ-3G9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="-40" id="mUT-6L-kS5"/>
+                <constraint firstItem="aZ7-si-vXZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="nrc-2r-YJp"/>
+                <constraint firstItem="Ulr-ht-1SB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="t1M-3Z-OIN"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="97.767857142857139"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="surfLogoBackground" width="159" height="234"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

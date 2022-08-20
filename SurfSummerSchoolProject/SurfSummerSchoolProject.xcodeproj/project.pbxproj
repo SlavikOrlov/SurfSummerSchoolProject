@@ -66,6 +66,8 @@
 		55EFF12C28B0FDAF009633BF /* SnackbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EFF12B28B0FDAF009633BF /* SnackbarView.swift */; };
 		55EFF12E28B0FDBA009633BF /* SnackbarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EFF12D28B0FDBA009633BF /* SnackbarModel.swift */; };
 		55EFF13428B15DAA009633BF /* ButtonActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EFF13328B15DAA009633BF /* ButtonActivityIndicator.swift */; };
+		55EFF13828B164C7009633BF /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EFF13628B164C7009633BF /* AuthorizationViewController.swift */; };
+		55EFF13928B164C7009633BF /* AuthorizationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55EFF13728B164C7009633BF /* AuthorizationViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,6 +132,8 @@
 		55EFF12B28B0FDAF009633BF /* SnackbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackbarView.swift; sourceTree = "<group>"; };
 		55EFF12D28B0FDBA009633BF /* SnackbarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackbarModel.swift; sourceTree = "<group>"; };
 		55EFF13328B15DAA009633BF /* ButtonActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonActivityIndicator.swift; sourceTree = "<group>"; };
+		55EFF13628B164C7009633BF /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
+		55EFF13728B164C7009633BF /* AuthorizationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthorizationViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +178,7 @@
 		558DB19E289A71B300CF2B05 /* MainFlow */ = {
 			isa = PBXGroup;
 			children = (
+				55EFF13528B16379009633BF /* AuthorizationModule */,
 				55EFF12328B0F5B0009633BF /* LoadErrorViewController */,
 				55EFF12828B0FD71009633BF /* Snackbar */,
 				558DB1A7289A72BC00CF2B05 /* TabBar */,
@@ -586,6 +591,15 @@
 			path = ButtonActivity;
 			sourceTree = "<group>";
 		};
+		55EFF13528B16379009633BF /* AuthorizationModule */ = {
+			isa = PBXGroup;
+			children = (
+				55EFF13628B164C7009633BF /* AuthorizationViewController.swift */,
+				55EFF13728B164C7009633BF /* AuthorizationViewController.xib */,
+			);
+			path = AuthorizationModule;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -644,6 +658,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55EFF13928B164C7009633BF /* AuthorizationViewController.xib in Resources */,
 				55EABA1428A02CA400D608B1 /* FavoriteViewCell.xib in Resources */,
 				558DB18F289A57DB00CF2B05 /* LaunchScreen.storyboard in Resources */,
 				55EAB9FF289FE2BD00D608B1 /* DetailImageTableViewCell.xib in Resources */,
@@ -687,6 +702,7 @@
 				55EFF11128B010CA009633BF /* BaseProfileStorage.swift in Sources */,
 				55EFF10828AFFCAF009633BF /* ProfileTitleTableViewCell.swift in Sources */,
 				55EABA0D28A02BF300D608B1 /* FavoriteModel.swift in Sources */,
+				55EFF13828B164C7009633BF /* AuthorizationViewController.swift in Sources */,
 				55EFF11F28B0DFAE009633BF /* SomeErrors.swift in Sources */,
 				55EFF10C28B00EFD009633BF /* ProfileModel.swift in Sources */,
 				55EABA08289FF58A00D608B1 /* DetailTextTableViewCell.swift in Sources */,
