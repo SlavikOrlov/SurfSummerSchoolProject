@@ -10,7 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FavoriteViewController" customModule="SurfSummerSchoolProject" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="oGh-sO-z2e" id="Odj-0c-zxY"/>
+                <outlet property="emptyFavoritesImage" destination="YCU-bo-Yw7" id="WYH-AM-sTA"/>
+                <outlet property="emptyFavoritesLabel" destination="Ipu-FL-dEb" id="0xq-dK-gzM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,18 +20,30 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oGh-sO-z2e">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </tableView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YCU-bo-Yw7">
+                    <rect key="frame" x="193.5" y="298" width="27" height="27"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="27" id="IjU-M3-TMw"/>
+                        <constraint firstAttribute="width" constant="27" id="Ux9-Yk-DJe"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ipu-FL-dEb">
+                    <rect key="frame" x="16" y="339" width="382" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oGh-sO-z2e" secondAttribute="trailing" id="T3Z-bP-KjE"/>
-                <constraint firstItem="oGh-sO-z2e" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Wqe-fw-cne"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="oGh-sO-z2e" secondAttribute="bottom" id="YKt-1i-tyG"/>
-                <constraint firstItem="oGh-sO-z2e" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="san-bZ-1jo"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ipu-FL-dEb" secondAttribute="trailing" constant="16" id="10Z-n9-3vk"/>
+                <constraint firstItem="Ipu-FL-dEb" firstAttribute="top" secondItem="YCU-bo-Yw7" secondAttribute="bottom" constant="14" id="Fnp-eT-tMa"/>
+                <constraint firstItem="YCU-bo-Yw7" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="SeM-gs-HQZ"/>
+                <constraint firstItem="YCU-bo-Yw7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="193.5" id="eEW-IY-JVU"/>
+                <constraint firstItem="Ipu-FL-dEb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="loP-fM-svi"/>
+                <constraint firstItem="YCU-bo-Yw7" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="254" id="qbs-W2-g4h"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YCU-bo-Yw7" secondAttribute="trailing" constant="193.5" id="ugV-A7-kcB"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="93.75"/>
         </view>

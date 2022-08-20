@@ -11,15 +11,7 @@ final class DetailTextTableViewCell: UITableViewCell {
     
     // MARK: - Views
     
-    @IBOutlet private weak var contentLabel: UILabel!
-    
-    // MARK: - Properties
-    
-    var text: String? {
-        didSet {
-            contentLabel.text = text
-        }
-    }
+    @IBOutlet weak var contentLabel: UILabel!
     
     // MARK: - UITableViewCell
     
@@ -34,5 +26,4 @@ final class DetailTextTableViewCell: UITableViewCell {
         contentLabel.textColor = ColorsExtension.black
         contentLabel.numberOfLines = 0
     }
-    
 }

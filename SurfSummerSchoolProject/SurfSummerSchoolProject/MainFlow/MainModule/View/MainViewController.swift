@@ -19,10 +19,11 @@ class MainViewController: UIViewController {
         static let spaceBetweenElements: CGFloat = 7
         static let spaceBetweenRows: CGFloat = 8
     }
+    static var favoriteTapStatus: Bool = false
     
     // MARK: - Properties
     
-    private let model: MainModel = .init()
+    private let model: MainModel = .shared
     
     // MARK: - Views
     
@@ -76,6 +77,12 @@ private extension MainViewController {
             target: self,
             action: #selector(searchBarButtonTap))
     }
+    
+    // MARK: - Actions
+
+    @objc func searchBarButtonTap() {
+        navigationController?.pushViewController(SearchViewController(), animated: true)
+    }
 }
     
 // MARK: - UICollection
@@ -117,9 +124,5 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         let detailViewController = DetailViewController()
         detailViewController.model = model.items[indexPath.row]
         navigationController?.pushViewController(detailViewController, animated: true)
-    }
-    
-    @objc func searchBarButtonTap() {
-        navigationController?.pushViewController(SearchViewController(), animated: true)
     }
 }

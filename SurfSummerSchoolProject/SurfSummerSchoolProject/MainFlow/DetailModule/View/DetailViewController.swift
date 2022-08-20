@@ -22,7 +22,7 @@ final class DetailViewController: UIViewController, UIGestureRecognizerDelegate 
     
     // MARK: - Properties
     
-    var model: DetailItemModel?
+    var model: DetailModel?
     
     // MARK: - UIViewController
     
@@ -68,9 +68,15 @@ private extension DetailViewController {
             tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
-        tableView.register(UINib(nibName: detailImageTableViewCell, bundle: .main), forCellReuseIdentifier: detailImageTableViewCell)
-        tableView.register(UINib(nibName: detailTitleTableViewCell, bundle: .main), forCellReuseIdentifier: detailTitleTableViewCell)
-        tableView.register(UINib(nibName: detailTextTableViewCell, bundle: .main), forCellReuseIdentifier: detailTextTableViewCell)
+        tableView.register(UINib(
+            nibName: detailImageTableViewCell,
+            bundle: .main), forCellReuseIdentifier: detailImageTableViewCell)
+        tableView.register(UINib(
+            nibName: detailTitleTableViewCell,
+            bundle: .main), forCellReuseIdentifier: detailTitleTableViewCell)
+        tableView.register(UINib(
+            nibName: detailTextTableViewCell,
+            bundle: .main), forCellReuseIdentifier: detailTextTableViewCell)
         tableView.dataSource = self
         tableView.separatorStyle = .none
     }
