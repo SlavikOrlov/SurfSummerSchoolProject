@@ -23,18 +23,18 @@ class MainViewController: UIViewController {
     private let mainItemCollectionViewCell: String = "\(MainItemCollectionViewCell.self)"
     private let cellProportion: Double = 245/168
     private let getPostErrorViewController = LoadErrorViewController()
-
+    
     
     // MARK: - Properties
     
-    private let model: MainModel = .shared
+    private let model = MainModel.shared
     
     // MARK: - Views
     
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet private weak var collectionView: UICollectionView!
     private let refreshControl = UIRefreshControl()
-
+    
     // MARK: - Lifecyrcle
     
     override func viewDidLoad() {
@@ -42,24 +42,38 @@ class MainViewController: UIViewController {
         configureApperance()
         configureModel()
         model.loadPosts()
+        configurePullToRefresh()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        if MainViewController.favoriteTapStatus {
+            collectionView.reloadData()
+            MainViewController.favoriteTapStatus = false
+        }
+        appendStateViewController {
+            self.model.loadPosts()
+            self.getPostErrorViewController.view.alpha = 0
+            self.activityIndicatorView.isHidden = false
+        }
+        if model.currentState == .error && model.posts.isEmpty {
+            getPostErrorViewController.view.alpha = 1
+            configureModel()
+        }
+        configureNavigationBar()
     }
 }
 
 // MARK: - Private Methods
 
 private extension MainViewController {
-
+    
     func configureApperance() {
-            collectionView.register(
+        collectionView.register(
             UINib(
                 nibName: mainItemCollectionViewCell,
                 bundle: .main),
-                forCellWithReuseIdentifier: mainItemCollectionViewCell)
+            forCellWithReuseIdentifier: mainItemCollectionViewCell)
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.contentInset = .init(
@@ -81,28 +95,28 @@ private extension MainViewController {
         navigationItem.rightBarButtonItem = searchButton
         navigationItem.rightBarButtonItem?.tintColor = ColorsExtension.black
     }
-
+    
     func configureModel() {
         model.didItemsError = { [weak self] in
             DispatchQueue.main.async {
                 guard let `self` = self else { return }
                 if self.model.posts.isEmpty {
-                self.activityIndicatorView.isHidden = true
-                self.getPostErrorViewController.view.alpha = 1
+                    self.activityIndicatorView.isHidden = true
+                    self.getPostErrorViewController.view.alpha = 1
                 } else {
                     let textForSnackBar = MainModel.errorMassege
                     let model = SnackbarModel(text: textForSnackBar)
                     let snackbar = SnackbarView(model: model)
                     snackbar.showSnackBar(on: self, with: model)
                 }
-             }
+            }
         }
         model.didItemsUpdated = { [weak self] in
             DispatchQueue.main.async {
                 self?.activityIndicatorView.isHidden = true
                 self?.collectionView.reloadData()
-                //FavoriteViewController.successLoadingPostsAfterZeroScreen = true
-             }
+                FavoriteViewController.successLoadingPostsAfterZeroScreen = true
+            }
         }
     }
     
@@ -141,9 +155,9 @@ private extension MainViewController {
     @objc func pullToRefresh(_ sender: AnyObject) {
         self.model.loadPosts()
         refreshControl.endRefreshing()
-        }
+    }
 }
-    
+
 // MARK: - UICollection
 
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {

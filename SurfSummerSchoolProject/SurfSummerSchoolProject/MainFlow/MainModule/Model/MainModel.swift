@@ -10,7 +10,7 @@ import UIKit
 
 final class MainModel {
     static let shared = MainModel.init()
-    static var errorMassege: String = "xnj-nj"
+    static var errorMassege: String = "Что-то пошло не так!"
     
     enum LoadState {
         case id
@@ -63,7 +63,7 @@ final class MainModel {
                     case .notNetworkConnection:
                         MainModel.errorMassege = "Отсутствует интернет-соединение. Попробуйте позже"
                     default:
-                        MainModel.errorMassege = "Xnj-nj"
+                        MainModel.errorMassege = "Что-то пошло не так!"
                     }
                 }
                 self?.currentState = .error

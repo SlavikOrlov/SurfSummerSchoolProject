@@ -34,6 +34,7 @@ class FavoriteViewController: UIViewController {
     
     private let model: MainModel = MainModel.shared
     static var favoriteTapStatus: Bool = false
+    static var successLoadingPostsAfterZeroScreen: Bool = false
     
     // MARK: - Lifecyrcle
     
@@ -45,6 +46,16 @@ class FavoriteViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureNavigationBar()
+        if !(postModel.favoritePosts.isEmpty) && FavoriteViewController.successLoadingPostsAfterZeroScreen {
+            notEmptyFavoritesNotification()
+            tableView.reloadData()
+            FavoriteViewController.successLoadingPostsAfterZeroScreen = false
+        }
+        if FavoriteViewController.favoriteTapStatus {
+            tableView.reloadData()
+            FavoriteViewController.favoriteTapStatus = false
+            postModel.favoritePosts.isEmpty ? emptyFavoritesNotification() : notEmptyFavoritesNotification()
+        }
     }
 }
 
@@ -69,9 +80,13 @@ private extension FavoriteViewController {
     }
     
     func configureModel() {
-        model.didItemsUpdated = { [weak self] in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                self?.tableView.reloadData()
+        emptyFavoritesNotification()
+        postModel.didItemsUpdated = { [weak self] in
+            DispatchQueue.main.async {
+                guard let `self` = self else { return }
+                self.tableView.reloadData()
+                self.postModel.favoritePosts.isEmpty ?
+                self.emptyFavoritesNotification() : self.notEmptyFavoritesNotification()
             }
         }
     }
@@ -196,8 +211,8 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = DetailViewController()
-        vc.model = self.postModel.favoritePosts[indexPath.section]
-        navigationController?.pushViewController(vc, animated: true)
+        let detailViewController = DetailViewController()
+        detailViewController.model = self.postModel.favoritePosts[indexPath.section]
+        navigationController?.pushViewController(detailViewController, animated: true)
     }
 }

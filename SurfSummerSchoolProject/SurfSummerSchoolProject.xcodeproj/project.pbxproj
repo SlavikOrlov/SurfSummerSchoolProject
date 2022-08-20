@@ -208,10 +208,10 @@
 		558DB1A1289A71F200CF2B05 /* FavoriteModule */ = {
 			isa = PBXGroup;
 			children = (
-				55EFF11A28B0D77F009633BF /* FavoritesStorage */,
 				55EFF11728B02B57009633BF /* View */,
 				55EFF11628B02B45009633BF /* Model */,
 				55EABA1028A02C7D00D608B1 /* Cells */,
+				55EFF11A28B0D77F009633BF /* FavoritesStorage */,
 			);
 			path = FavoriteModule;
 			sourceTree = "<group>";
@@ -520,8 +520,7 @@
 		55EFF12328B0F5B0009633BF /* LoadErrorViewController */ = {
 			isa = PBXGroup;
 			children = (
-				55EFF12428B0F5DC009633BF /* LoadErrorViewController.swift */,
-				55EFF12528B0F5DC009633BF /* LoadErrorViewController.xib */,
+				55EFF13128B109A2009633BF /* View */,
 			);
 			path = LoadErrorViewController;
 			sourceTree = "<group>";
@@ -529,8 +528,8 @@
 		55EFF12828B0FD71009633BF /* Snackbar */ = {
 			isa = PBXGroup;
 			children = (
-				55EFF12A28B0FD8E009633BF /* Model */,
 				55EFF12928B0FD88009633BF /* View */,
+				55EFF12A28B0FD8E009633BF /* Model */,
 			);
 			path = Snackbar;
 			sourceTree = "<group>";
@@ -563,6 +562,15 @@
 			isa = PBXGroup;
 			children = (
 				558DB1AA289A91A100CF2B05 /* TabBarConfigurator.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		55EFF13128B109A2009633BF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				55EFF12428B0F5DC009633BF /* LoadErrorViewController.swift */,
+				55EFF12528B0F5DC009633BF /* LoadErrorViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
