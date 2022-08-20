@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoadErrorViewController" customModule="SurfSummerSchoolProject" customModuleProvider="target">
             <connections>
-                <outlet property="ErrorMessage" destination="agr-uU-viR" id="0WU-ac-Tvz"/>
+                <outlet property="errorMessage" destination="agr-uU-viR" id="mbq-xF-xY8"/>
                 <outlet property="sadSmileImage" destination="SWu-WM-0LM" id="Vef-Dc-uX7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

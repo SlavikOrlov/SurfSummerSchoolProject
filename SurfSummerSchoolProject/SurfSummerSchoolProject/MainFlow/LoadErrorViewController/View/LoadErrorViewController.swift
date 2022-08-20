@@ -12,7 +12,7 @@ class LoadErrorViewController: UIViewController {
     var reloadButtonAction: ()->Void = {}
 
     @IBOutlet weak var sadSmileImage: UIImageView!
-    @IBOutlet weak var ErrorMessage: UILabel!
+    @IBOutlet weak var errorMessage: UILabel!
     @IBAction func reloadButton(_ sender: Any) {
         reloadButtonAction()
         self.view.alpha = 0.5
@@ -21,7 +21,7 @@ class LoadErrorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(sadSmileImage)
-        ErrorMessage.text = "Не удалось загрузить ленту. Обновите экран или попробуйте позже"
+        errorMessage.text = "Не удалось загрузить ленту. Обновите экран или попробуйте позже"
     }
 
 
