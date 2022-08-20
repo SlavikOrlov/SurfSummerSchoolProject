@@ -20,6 +20,9 @@ class MainViewController: UIViewController {
         static let spaceBetweenRows: CGFloat = 8
     }
     static var favoriteTapStatus: Bool = false
+    private let mainViewController: String = "\(MainViewController.self)"
+    private let cellProportion: Double = 245/168
+
     
     // MARK: - Properties
     
@@ -27,6 +30,7 @@ class MainViewController: UIViewController {
     
     // MARK: - Views
     
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet private weak var collectionView: UICollectionView!
     
     // MARK: - Lifecyrcle
@@ -87,21 +91,21 @@ private extension MainViewController {
     
 // MARK: - UICollection
 
-extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return model.items.count
+        return model.posts.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(MainItemCollectionViewCell.self)", for: indexPath)
+        let cell = mainViewController.dequeueReusableCell(withReuseIdentifier: mainViewController, for: indexPath)
         if let cell = cell as? MainItemCollectionViewCell {
-            let item = model.items[indexPath.row]
-            cell.title = item.title
-            cell.isFavorite = item.isFavorite
-            cell.imageUrlInString = item.imageUrlInString
+            let item = model.posts[indexPath.row]
+            cell.titleLabel.text = model.posts[indexPath.item].title
+            cell.isFavorite = model.posts[indexPath.item].isFavorite
+            cell.imageUrlInString = model.posts[indexPath.item].imageUrlInString
             cell.didFavoritesTapped = { [weak self] in
-                self?.model.items[indexPath.row].isFavorite.toggle()
+                self?.model.posts[indexPath.row].isFavorite.toggle()
             }
         }
         return cell
@@ -122,7 +126,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailViewController = DetailViewController()
-        detailViewController.model = model.items[indexPath.row]
+        detailViewController.model = model.posts[indexPath.row]
         navigationController?.pushViewController(detailViewController, animated: true)
     }
 }

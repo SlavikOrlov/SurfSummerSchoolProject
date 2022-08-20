@@ -9,9 +9,8 @@ import Foundation
 import UIKit
 
 final class MainModel {
-    
     static let shared = MainModel.init()
-    static var errorMassege: String = ""
+    static var errorMassege: String = "xnj-nj"
     
     enum LoadState {
         case id
@@ -26,7 +25,6 @@ final class MainModel {
     var didItemsUpdated: (() -> Void)?
     var didItemsError: (()->Void)?
 
-    
     // MARK: - Properties
     
     let pictureService = PicturesService()
@@ -65,7 +63,7 @@ final class MainModel {
                     case .notNetworkConnection:
                         MainModel.errorMassege = "Отсутствует интернет-соединение. Попробуйте позже"
                     default:
-                        MainModel.errorMassege = ""
+                        MainModel.errorMassege = "Xnj-nj"
                     }
                 }
                 self?.currentState = .error

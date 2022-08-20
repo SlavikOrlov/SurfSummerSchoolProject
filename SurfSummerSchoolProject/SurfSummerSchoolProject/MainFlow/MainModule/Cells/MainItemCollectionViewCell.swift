@@ -15,6 +15,7 @@ class MainItemCollectionViewCell: UICollectionViewCell {
         static let favoriteTapped = ImagesExtension.favoriteTapped
         static let favoriteUntapped = ImagesExtension.favoriteUntapped
     }
+    let favoritesStorage = FavoritesStorage.shared
     
     // MARK: - Views
     
@@ -43,11 +44,6 @@ class MainItemCollectionViewCell: UICollectionViewCell {
     }
     // MARK: - Properties
     
-    var title: String = "" {
-        didSet {
-            titleLabel.text = title
-        }
-    }
     var imageUrlInString: String = "" {
         didSet {
             guard let url = URL(string: imageUrlInString) else {
@@ -66,6 +62,11 @@ class MainItemCollectionViewCell: UICollectionViewCell {
     
     @IBAction private func favoriteButton(_ sender: UIButton) {
         didFavoritesTapped?()
+        if favoritesStorage.isPostFavorite(post: self.titleLabel.text ?? "") {
+            favoritesStorage.removeFavorite(favoritePost: self.titleLabel.text ?? "")
+        } else {
+            favoritesStorage.addFavorite(favoritePost: self.titleLabel.text ?? "")
+        }
         isFavorite.toggle()
     }
     
@@ -75,7 +76,12 @@ class MainItemCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         configureAppearance()
     }
-
+    
+    override func prepareForReuse() {
+        imageUrlInString = ""
+        titleLabel.text = ""
+        imageView.image = UIImage()
+    }
 }
 
 // MARK: - Private Methods
@@ -87,5 +93,6 @@ private extension MainItemCollectionViewCell {
         titleLabel.font = .systemFont(ofSize: 12)
         imageView.layer.cornerRadius = 12
         favoriteButton.tintColor = ColorsExtension.white
+        isFavorite = false
     }
 }

@@ -61,6 +61,8 @@
 		55EFF11C28B0D787009633BF /* FavoritesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EFF11B28B0D787009633BF /* FavoritesStorage.swift */; };
 		55EFF11F28B0DFAE009633BF /* SomeErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EFF11E28B0DFAE009633BF /* SomeErrors.swift */; };
 		55EFF12228B0E444009633BF /* AllertMassage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EFF12128B0E444009633BF /* AllertMassage.swift */; };
+		55EFF12628B0F5DC009633BF /* LoadErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EFF12428B0F5DC009633BF /* LoadErrorViewController.swift */; };
+		55EFF12728B0F5DD009633BF /* LoadErrorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55EFF12528B0F5DC009633BF /* LoadErrorViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +122,8 @@
 		55EFF11B28B0D787009633BF /* FavoritesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesStorage.swift; sourceTree = "<group>"; };
 		55EFF11E28B0DFAE009633BF /* SomeErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeErrors.swift; sourceTree = "<group>"; };
 		55EFF12128B0E444009633BF /* AllertMassage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllertMassage.swift; sourceTree = "<group>"; };
+		55EFF12428B0F5DC009633BF /* LoadErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadErrorViewController.swift; sourceTree = "<group>"; };
+		55EFF12528B0F5DC009633BF /* LoadErrorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadErrorViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +168,7 @@
 		558DB19E289A71B300CF2B05 /* MainFlow */ = {
 			isa = PBXGroup;
 			children = (
+				55EFF12328B0F5B0009633BF /* LoadErrorViewController */,
 				558DB1A7289A72BC00CF2B05 /* TabBar */,
 				558DB19F289A71BD00CF2B05 /* MainModule */,
 				55EAB9F5289FDDD200D608B1 /* DetailModule */,
@@ -507,6 +512,15 @@
 			path = AllertMassage;
 			sourceTree = "<group>";
 		};
+		55EFF12328B0F5B0009633BF /* LoadErrorViewController */ = {
+			isa = PBXGroup;
+			children = (
+				55EFF12428B0F5DC009633BF /* LoadErrorViewController.swift */,
+				55EFF12528B0F5DC009633BF /* LoadErrorViewController.xib */,
+			);
+			path = LoadErrorViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -568,6 +582,7 @@
 				55EABA1428A02CA400D608B1 /* FavoriteViewCell.xib in Resources */,
 				558DB18F289A57DB00CF2B05 /* LaunchScreen.storyboard in Resources */,
 				55EAB9FF289FE2BD00D608B1 /* DetailImageTableViewCell.xib in Resources */,
+				55EFF12728B0F5DD009633BF /* LoadErrorViewController.xib in Resources */,
 				55EFF10528AFFC70009633BF /* ProfileViewTableCell.xib in Resources */,
 				558DB18C289A57DB00CF2B05 /* Assets.xcassets in Resources */,
 				55EABA04289FE5F200D608B1 /* DetailTitleTableViewCell.xib in Resources */,
@@ -618,6 +633,7 @@
 				55EABA2428A4235900D608B1 /* AuthResponseModel.swift in Sources */,
 				55EABA1328A02CA400D608B1 /* FavoriteViewCell.swift in Sources */,
 				55EABA3228A4249B00D608B1 /* BaseTokenStorage.swift in Sources */,
+				55EFF12628B0F5DC009633BF /* LoadErrorViewController.swift in Sources */,
 				55EABA1F28A4229B00D608B1 /* EmptyModel.swift in Sources */,
 				558DB1A4289A720D00CF2B05 /* FavoriteViewController.swift in Sources */,
 				55EABA1928A4207500D608B1 /* NetworkTask.swift in Sources */,
