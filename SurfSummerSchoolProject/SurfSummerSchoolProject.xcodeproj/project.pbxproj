@@ -63,6 +63,8 @@
 		55EFF12228B0E444009633BF /* AllertMassage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EFF12128B0E444009633BF /* AllertMassage.swift */; };
 		55EFF12628B0F5DC009633BF /* LoadErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EFF12428B0F5DC009633BF /* LoadErrorViewController.swift */; };
 		55EFF12728B0F5DD009633BF /* LoadErrorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55EFF12528B0F5DC009633BF /* LoadErrorViewController.xib */; };
+		55EFF12C28B0FDAF009633BF /* SnackbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EFF12B28B0FDAF009633BF /* SnackbarView.swift */; };
+		55EFF12E28B0FDBA009633BF /* SnackbarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EFF12D28B0FDBA009633BF /* SnackbarModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,6 +126,8 @@
 		55EFF12128B0E444009633BF /* AllertMassage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllertMassage.swift; sourceTree = "<group>"; };
 		55EFF12428B0F5DC009633BF /* LoadErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadErrorViewController.swift; sourceTree = "<group>"; };
 		55EFF12528B0F5DC009633BF /* LoadErrorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadErrorViewController.xib; sourceTree = "<group>"; };
+		55EFF12B28B0FDAF009633BF /* SnackbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackbarView.swift; sourceTree = "<group>"; };
+		55EFF12D28B0FDBA009633BF /* SnackbarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackbarModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				55EFF12328B0F5B0009633BF /* LoadErrorViewController */,
+				55EFF12828B0FD71009633BF /* Snackbar */,
 				558DB1A7289A72BC00CF2B05 /* TabBar */,
 				558DB19F289A71BD00CF2B05 /* MainModule */,
 				55EAB9F5289FDDD200D608B1 /* DetailModule */,
@@ -224,8 +229,8 @@
 		558DB1A7289A72BC00CF2B05 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				558DB1A8289A72CE00CF2B05 /* TabBarModel.swift */,
-				558DB1AA289A91A100CF2B05 /* TabBarConfigurator.swift */,
+				55EFF13028B0FE3B009633BF /* View */,
+				55EFF12F28B0FE35009633BF /* Model */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -521,6 +526,47 @@
 			path = LoadErrorViewController;
 			sourceTree = "<group>";
 		};
+		55EFF12828B0FD71009633BF /* Snackbar */ = {
+			isa = PBXGroup;
+			children = (
+				55EFF12A28B0FD8E009633BF /* Model */,
+				55EFF12928B0FD88009633BF /* View */,
+			);
+			path = Snackbar;
+			sourceTree = "<group>";
+		};
+		55EFF12928B0FD88009633BF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				55EFF12B28B0FDAF009633BF /* SnackbarView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		55EFF12A28B0FD8E009633BF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				55EFF12D28B0FDBA009633BF /* SnackbarModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		55EFF12F28B0FE35009633BF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				558DB1A8289A72CE00CF2B05 /* TabBarModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		55EFF13028B0FE3B009633BF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				558DB1AA289A91A100CF2B05 /* TabBarConfigurator.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -617,6 +663,7 @@
 				558DB183289A57D900CF2B05 /* AppDelegate.swift in Sources */,
 				55EABA2E28A4243E00D608B1 /* TokenStorage.swift in Sources */,
 				55EABA3A28A42A1800D608B1 /* UIImageView+ImageLoader.swift in Sources */,
+				55EFF12E28B0FDBA009633BF /* SnackbarModel.swift in Sources */,
 				558DB1A9289A72CE00CF2B05 /* TabBarModel.swift in Sources */,
 				55EFF11128B010CA009633BF /* BaseProfileStorage.swift in Sources */,
 				55EFF10828AFFCAF009633BF /* ProfileTitleTableViewCell.swift in Sources */,
@@ -629,6 +676,7 @@
 				55EFF10428AFFC70009633BF /* ProfileViewTableCell.swift in Sources */,
 				55EABA1B28A4211800D608B1 /* NetworkMethod.swift in Sources */,
 				55EABA3028A4244C00D608B1 /* TokenContainer.swift in Sources */,
+				55EFF12C28B0FDAF009633BF /* SnackbarView.swift in Sources */,
 				55EABA2B28A423F900D608B1 /* PicturesService.swift in Sources */,
 				55EABA2428A4235900D608B1 /* AuthResponseModel.swift in Sources */,
 				55EABA1328A02CA400D608B1 /* FavoriteViewCell.swift in Sources */,
