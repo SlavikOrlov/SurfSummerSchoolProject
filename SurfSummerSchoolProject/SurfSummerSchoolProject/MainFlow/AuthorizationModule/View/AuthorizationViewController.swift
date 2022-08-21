@@ -10,17 +10,15 @@ import UIKit
 class AuthorizationViewController: UIViewController {
     
     // MARK: - Constants
+    
     private let showHidePasswordButton = UIButton(type: .custom)
     
     // MARK: - Views
-
+    
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var loginLine: UIView!
-    
     @IBOutlet weak var passwordTextField: UITextField!
-    
     @IBOutlet weak var passwordLine: UIView!
-    
     @IBOutlet weak var loginButton: UIButton!
     
     // MARK: - Actions
@@ -43,7 +41,6 @@ class AuthorizationViewController: UIViewController {
                 phone: phoneNumberClearedFromMask,
                 password: password
             )
-            
             AuthService()
                 .performLoginRequestAndSaveToken(credentials: credentials) { [weak self] result in
                     switch result {
@@ -88,9 +85,9 @@ class AuthorizationViewController: UIViewController {
         passwordTextField.isSecureTextEntry.toggle()
         showHidePasswordButton.isSelected.toggle()
     }
-
+    
     // MARK: - Lifecyrcle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureApperance()
@@ -106,8 +103,6 @@ class AuthorizationViewController: UIViewController {
 // MARK: - Private Methods AuthorizationViewController
 
 private extension AuthorizationViewController {
-    
-    // Apperance loginTextField and passwordTextField
     
     func configureApperance() {
         self.loginTextField.placeholder = "Логин"
@@ -126,19 +121,14 @@ private extension AuthorizationViewController {
         self.passwordTextField.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         self.passwordTextField.delegate = self
         self.passwordTextField.setLeftPaddingPoints(18)
-        //self.passwordTextField.setRightPaddingPoints(60)
     }
-    
-    // ConfigureNavigationBar
     
     func configureNavigationBar() {
         self.navigationItem.title = "Вход"
     }
 }
-    
-extension AuthorizationViewController {
 
-    // Setting up the show hide password button
+extension AuthorizationViewController {
     
     func enablePasswordToggle(){
         var buttonConfiguration = UIButton.Configuration.filled()
@@ -154,11 +144,8 @@ extension AuthorizationViewController {
         showHidePasswordButton.alpha = 0.4
     }
 }
-    
 
 extension AuthorizationViewController {
-
-    // Apperance loginLine
     
     func showEmptyLoginNotification() {
         loginLine.backgroundColor = ColorsExtension.red
@@ -199,11 +186,8 @@ extension AuthorizationViewController {
             multiplier: 1.0,
             constant: 8.0
         ).isActive = true
-        //passwordConstraint.constant = 40
         self.view.layoutIfNeeded()
     }
-    
-    // Apperance passwordLine and empty notification
     
     func showEmptyPasswordNotification() {
         passwordLine.backgroundColor = ColorsExtension.red
@@ -243,11 +227,8 @@ extension AuthorizationViewController {
             multiplier: 1.0,
             constant: 8.0
         ).isActive = true
-        //buttonConstraint.constant = 56
         self.view.layoutIfNeeded()
     }
-    
-    // Hiding empty notification
     
     func dismissEmptyFieldsNotidication() {
         loginLine.backgroundColor = ColorsExtension.lightGrayForLine
@@ -258,8 +239,6 @@ extension AuthorizationViewController {
         if let emptyPasswordNotificationLabel = self.view.viewWithTag(150) {
             emptyPasswordNotificationLabel.removeFromSuperview()
         }
-        //passwordConstraint.constant = 17
-        //buttonConstraint.constant = 32
         self.view.layoutIfNeeded()
     }
     
@@ -270,18 +249,28 @@ extension AuthorizationViewController {
 
 // MARK: - Private Methods UITextField
 
-// Setting up the padding points
-
 extension UITextField {
     
     func setLeftPaddingPoints(_ amount:CGFloat){
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
+        let paddingView = UIView(
+            frame: CGRect(
+                x: 0,
+                y: 0,
+                width: amount,
+                height: self.frame.size.height)
+        )
         self.leftView = paddingView
         self.leftViewMode = .always
     }
     
     func setRightPaddingPoints(_ amount:CGFloat) {
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
+        let paddingView = UIView(
+            frame: CGRect(
+                x: 0,
+                y: 0,
+                width: amount,
+                height: self.frame.size.height)
+        )
         self.rightView = paddingView
         self.rightViewMode = .always
     }
