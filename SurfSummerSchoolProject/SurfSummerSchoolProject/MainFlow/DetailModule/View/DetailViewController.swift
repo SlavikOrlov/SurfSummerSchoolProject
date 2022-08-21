@@ -68,13 +68,16 @@ private extension DetailViewController {
             tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
-        tableView.register(UINib(
+        tableView.register(
+            UINib(
             nibName: detailImageTableViewCell,
             bundle: .main), forCellReuseIdentifier: detailImageTableViewCell)
-        tableView.register(UINib(
+        tableView.register(
+            UINib(
             nibName: detailTitleTableViewCell,
             bundle: .main), forCellReuseIdentifier: detailTitleTableViewCell)
-        tableView.register(UINib(
+        tableView.register(
+            UINib(
             nibName: detailTextTableViewCell,
             bundle: .main), forCellReuseIdentifier: detailTextTableViewCell)
         tableView.dataSource = self
