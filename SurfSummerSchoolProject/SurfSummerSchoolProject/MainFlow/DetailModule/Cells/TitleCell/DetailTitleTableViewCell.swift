@@ -11,22 +11,8 @@ final class DetailTitleTableViewCell: UITableViewCell {
     
     // MARK: - Views
     
-    @IBOutlet private weak var cartTitleLabel: UILabel!
-    @IBOutlet private weak var dateLabel: UILabel!
-    
-    // MARK: - Properties
-    
-    var title: String = "" {
-        didSet {
-            cartTitleLabel.text = title
-        }
-    }
-    
-    var date: String = "" {
-        didSet {
-            dateLabel.text = date
-        }
-    }
+    @IBOutlet weak var cartTitleLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     // MARK: - UITableViewCell
     
@@ -39,7 +25,6 @@ final class DetailTitleTableViewCell: UITableViewCell {
         selectionStyle = .none
         cartTitleLabel.font = .systemFont(ofSize: 16)
         dateLabel.font = .systemFont(ofSize: 10)
-        dateLabel.textColor = UIColor(displayP3Red: 0xB3 / 255, green: 0xB3 / 255, blue: 0xB3 / 255, alpha: 1)
+        dateLabel.textColor = ColorsExtension.black
     }
-    
 }

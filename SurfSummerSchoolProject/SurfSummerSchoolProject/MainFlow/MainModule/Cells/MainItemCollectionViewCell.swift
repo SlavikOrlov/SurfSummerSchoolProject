@@ -15,9 +15,11 @@ class MainItemCollectionViewCell: UICollectionViewCell {
         static let favoriteTapped = ImagesExtension.favoriteTapped
         static let favoriteUntapped = ImagesExtension.favoriteUntapped
     }
+    let favoritesStorage = FavoritesStorage.shared
+    
     // MARK: - Views
     
-    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var favoriteButton: UIButton!
     
@@ -31,8 +33,6 @@ class MainItemCollectionViewCell: UICollectionViewCell {
         return isFavorite ? Constants.favoriteTapped : Constants.favoriteUntapped
     }
     
-    // анимацию в отдельный метод (разделить из-зи большого кол-ва ответственности
-    // Нажатие кнопки и уменьшение
     override var isHighlighted: Bool {
         didSet {
             UIView.animate(withDuration: 0.2) {
@@ -42,11 +42,6 @@ class MainItemCollectionViewCell: UICollectionViewCell {
     }
     // MARK: - Properties
     
-    var title: String = "" {
-        didSet {
-            titleLabel.text = title
-        }
-    }
     var imageUrlInString: String = "" {
         didSet {
             guard let url = URL(string: imageUrlInString) else {
@@ -65,6 +60,11 @@ class MainItemCollectionViewCell: UICollectionViewCell {
     
     @IBAction private func favoriteButton(_ sender: UIButton) {
         didFavoritesTapped?()
+        if favoritesStorage.isPostFavorite(post: self.titleLabel.text ?? "") {
+            favoritesStorage.removeFavorite(favoritePost: self.titleLabel.text ?? "")
+        } else {
+            favoritesStorage.addFavorite(favoritePost: self.titleLabel.text ?? "")
+        }
         isFavorite.toggle()
     }
     
@@ -74,7 +74,12 @@ class MainItemCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         configureAppearance()
     }
-
+    
+    override func prepareForReuse() {
+        imageUrlInString = ""
+        titleLabel.text = ""
+        imageView.image = UIImage()
+    }
 }
 
 // MARK: - Private Methods
@@ -82,9 +87,10 @@ class MainItemCollectionViewCell: UICollectionViewCell {
 private extension MainItemCollectionViewCell {
     
     func configureAppearance() {
-        titleLabel.textColor = .black
+        titleLabel.textColor = ColorsExtension.black
         titleLabel.font = .systemFont(ofSize: 12)
         imageView.layer.cornerRadius = 12
-        favoriteButton.tintColor = .white
+        favoriteButton.tintColor = ColorsExtension.white
+        isFavorite = false
     }
 }

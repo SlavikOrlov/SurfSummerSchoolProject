@@ -14,15 +14,19 @@ final class DetailImageTableViewCell: UITableViewCell {
         static let favoriteTapped = ImagesExtension.favoriteTapped
         static let favoriteUntapped = ImagesExtension.favoriteUntapped
     }
+    let favoritesStorage = FavoritesStorage.shared
+    var postTextLabel: String = ""
     
     // MARK: - Views
     
     @IBOutlet private weak var cartImageView: UIImageView!
-    @IBOutlet weak var favoriteButtonLabel: UIButton!
+    @IBOutlet private weak var favoriteButtonLabel: UIButton!
     
     // MARK: - Events
 
+    var didFavoriteTap: (() -> Void)?
     @IBAction func favoriteButtonAction(_ sender: Any) {
+        didFavoriteTap?()
     }
     
     // MARK: - Calculated
@@ -54,5 +58,9 @@ final class DetailImageTableViewCell: UITableViewCell {
         selectionStyle = .none
         cartImageView.layer.cornerRadius = 12
         cartImageView.contentMode = .scaleAspectFill
+    }
+    
+    override func prepareForReuse() {
+        cartImageView.image = UIImage()
     }
 }
