@@ -101,15 +101,18 @@ private extension FavoriteViewController {
             tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
-        tableView.register(UINib(
-            nibName: detailImageTableViewCell,
-            bundle: .main), forCellReuseIdentifier: detailImageTableViewCell)
-        tableView.register(UINib(
-            nibName: detailTitleTableViewCell,
-            bundle: .main), forCellReuseIdentifier: detailTitleTableViewCell)
-        tableView.register(UINib(
-            nibName: detailTextTableViewCell,
-            bundle: .main), forCellReuseIdentifier: detailTextTableViewCell)
+        tableView.register(
+            UINib(
+                nibName: detailImageTableViewCell,
+                bundle: .main), forCellReuseIdentifier: detailImageTableViewCell)
+        tableView.register(
+            UINib(
+                nibName: detailTitleTableViewCell,
+                bundle: .main), forCellReuseIdentifier: detailTitleTableViewCell)
+        tableView.register(
+            UINib(
+                nibName: detailTextTableViewCell,
+                bundle: .main), forCellReuseIdentifier: detailTextTableViewCell)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
@@ -131,7 +134,11 @@ private extension FavoriteViewController {
     }
     
     func configurePullToRefresh() {
-        refreshControl.addTarget(self, action: #selector(self.pullToRefresh(_:)), for: .valueChanged)
+        refreshControl.addTarget(
+            self,
+            action: #selector(self.pullToRefresh(_:)),
+            for: .valueChanged
+        )
         refreshControl.tintColor = ColorsExtension.lightGray
         refreshControl.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
         tableView.addSubview(refreshControl)
