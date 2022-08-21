@@ -33,8 +33,6 @@ class MainItemCollectionViewCell: UICollectionViewCell {
         return isFavorite ? Constants.favoriteTapped : Constants.favoriteUntapped
     }
     
-    // анимацию в отдельный метод (разделить из-зи большого кол-ва ответственности
-    // Нажатие кнопки и уменьшение
     override var isHighlighted: Bool {
         didSet {
             UIView.animate(withDuration: 0.2) {

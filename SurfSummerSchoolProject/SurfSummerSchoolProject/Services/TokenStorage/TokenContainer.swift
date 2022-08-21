@@ -8,7 +8,6 @@
 import Foundation
 
 struct TokenContainer {
-    
     let token: String
     let receivingDate: Date
     var tokenExpiringTime: TimeInterval {

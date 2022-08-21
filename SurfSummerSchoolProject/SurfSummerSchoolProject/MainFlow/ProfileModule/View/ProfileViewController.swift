@@ -8,14 +8,14 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-
+    
     //MARK: - Views
-
+    
     @IBOutlet weak var logoutButtonLabel: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
     //MARK: - Constants
-
+    
     private let profileViewTableCell: String = "\(ProfileViewTableCell.self)"
     private let profileTitleTableViewCell: String = "\(ProfileTitleTableViewCell.self)"
     private let numberOfRows = 4
@@ -23,7 +23,7 @@ class ProfileViewController: UIViewController {
     private let titleTableCellHeight: CGFloat = 72
     
     // MARK: - Properties
-
+    
     private var profileModel: ProfileModel = ProfileExample.shared.profileModel
     
     //MARK: - Lifecyrcle
@@ -39,44 +39,12 @@ class ProfileViewController: UIViewController {
     }
     
     // MARK: - Actions
-
+    
     @IBAction func logoutButtonLabel(_ sender: Any) {
-        addAlertView(for: self, text: "Вы точно хотите выйти из приложения?", completion: { action in
-            LogoutService()
-                .performLogoutRequestAndRemoveToken() { [weak self] result in
-                    switch result {
-                    case .success:
-                        DispatchQueue.main.async {
-                            if let delegate = UIApplication.shared.delegate as? AppDelegate {
-                                let authorizationViewController = AuthorizationViewController()
-                                let navigationAuthViewController = UINavigationController(rootViewController: authorizationViewController)
-                                delegate.window?.rootViewController = navigationAuthViewController
-                            }
-                        }
-                    case .failure(let error):
-                        DispatchQueue.main.async {
-                            var textForSnackbar = "Не удалось выйти, попробуйте еще раз"
-                            if let currentError = error as? SomeErrors {
-                                switch currentError {
-                                case .notNetworkConnection:
-                                    textForSnackbar = "Отсутствует интернет-соединение \nПопробуйте позже"
-                                default:
-                                    textForSnackbar = "Не удалось выйти, попробуйте еще раз"
-                                }
-                            }
-                            
-                            let model = SnackbarModel(text: textForSnackbar)
-                            let snackbar = SnackbarView(model: model)
-                            guard let `self` = self else { return }
-                            snackbar.showSnackBar(on: self, with: model)
-                        }
-                    }
-                }
-        })
     }
-
+    
     // MARK: - Private Methods
-
+    
     private func configureNavigationBar() {
         navigationItem.title = "Профиль"
     }
@@ -124,7 +92,7 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
             let cell = tableView.dequeueReusableCell(withIdentifier: profileTitleTableViewCell)
             if let cell = cell as? ProfileTitleTableViewCell {
                 cell.profileTitleLable.text = "Телефон"
-                cell.profileDetailLable.text = phoneMask(phoneNumber: profileModel.phone, shouldRemoveLastDigit: false)
+                cell.profileDetailLable.text = profileModel.phone
             }
             return cell ?? UITableViewCell()
         default:

@@ -135,7 +135,6 @@ private extension BaseNetworkTask {
         if isNeedInjectToken {
             request.addValue("Token \(try tokenStorage.getToken().token)", forHTTPHeaderField: "Authorization")
         }
-        
         return request
     }
     

@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 final class MainModel {
+    
     static let shared = MainModel.init()
     static var errorMassege: String = "Что-то пошло не так!"
     

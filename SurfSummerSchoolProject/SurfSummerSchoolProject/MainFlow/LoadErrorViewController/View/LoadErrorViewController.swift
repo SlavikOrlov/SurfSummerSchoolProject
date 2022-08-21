@@ -23,7 +23,4 @@ class LoadErrorViewController: UIViewController {
         view.addSubview(sadSmileImage)
         errorMessage.text = "Не удалось загрузить ленту. Обновите экран или попробуйте позже"
     }
-
-
-    
 }

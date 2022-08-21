@@ -21,15 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if #available(iOS 13.0, *) {
             window?.overrideUserInterfaceStyle = .light
         }
-
         startApplicationProccess()
-
         return true
     }
 
     func startApplicationProccess() {
         runLaunchScreen()
-
         if let tokenContainer = try? tokenStorage.getToken(), !tokenContainer.isExpired {
             runMainFlow()
         } else {
@@ -56,7 +53,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func runLaunchScreen() {
         let lauchScreenViewController = UIStoryboard(name: "LaunchScreen", bundle: .main)
             .instantiateInitialViewController()
-
         window?.rootViewController = lauchScreenViewController
     }
 }
