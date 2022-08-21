@@ -11,7 +11,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AuthorizationViewController" customModule="SurfSummerSchoolProject" customModuleProvider="target">
             <connections>
                 <outlet property="loginButton" destination="Ulr-ht-1SB" id="ajz-CX-ObX"/>
+                <outlet property="loginLine" destination="2DO-2Z-DpB" id="abg-vc-gFS"/>
                 <outlet property="loginTextField" destination="aZ7-si-vXZ" id="Pgk-8o-IqT"/>
+                <outlet property="passwordLine" destination="30M-gP-nOf" id="Gya-kA-8dN"/>
                 <outlet property="passwordTextField" destination="NmH-Og-W8T" id="8yP-JL-8Uw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -37,7 +39,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="     Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NmH-Og-W8T">
-                    <rect key="frame" x="16" y="195" width="382" height="55"/>
+                    <rect key="frame" x="16" y="197" width="382" height="55"/>
                     <color key="backgroundColor" systemColor="systemGray6Color"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="55" id="G2K-Pj-ZyD"/>
@@ -46,7 +48,7 @@
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ulr-ht-1SB">
-                    <rect key="frame" x="16" y="283" width="382" height="48"/>
+                    <rect key="frame" x="16" y="285" width="382" height="48"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="dz4-Ll-Mr5"/>
@@ -60,21 +62,56 @@
                         <action selector="loginButtonAction:" destination="-1" eventType="touchUpInside" id="hpa-WT-TgK"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2DO-2Z-DpB">
+                    <rect key="frame" x="16" y="179" width="382" height="1"/>
+                    <color key="backgroundColor" systemColor="systemGray4Color"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="J8L-4O-RhL"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="30M-gP-nOf">
+                    <rect key="frame" x="16" y="252" width="382" height="1"/>
+                    <color key="backgroundColor" systemColor="systemGray4Color"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="AGa-Zv-0xl"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rlB-nW-Mam">
+                    <rect key="frame" x="90" y="350" width="234" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="ks5-cn-BYe"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Вход без регистрации"/>
+                    <connections>
+                        <action selector="ButtonActionWithoutLog:" destination="-1" eventType="touchUpInside" id="5Sk-3R-CdD"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="rlB-nW-Mam" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="2Ej-Qa-Ab4"/>
                 <constraint firstItem="NmH-Og-W8T" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="3Sg-K5-rBW"/>
+                <constraint firstItem="30M-gP-nOf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="6lY-tQ-auE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2DO-2Z-DpB" secondAttribute="trailing" constant="16" id="AZX-Dh-JFr"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ulr-ht-1SB" secondAttribute="trailing" constant="16" id="EZG-Pk-Rdl"/>
-                <constraint firstItem="NmH-Og-W8T" firstAttribute="top" secondItem="aZ7-si-vXZ" secondAttribute="bottom" constant="16" id="Kyw-fJ-Bxc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="30M-gP-nOf" secondAttribute="trailing" constant="16" id="Ggp-CM-cgr"/>
+                <constraint firstItem="NmH-Og-W8T" firstAttribute="top" secondItem="2DO-2Z-DpB" secondAttribute="bottom" constant="17" id="Kyw-fJ-Bxc"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aZ7-si-vXZ" secondAttribute="trailing" constant="16" id="MWL-5h-chz"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rlB-nW-Mam" secondAttribute="trailing" constant="90" id="W0g-gj-hVW"/>
                 <constraint firstItem="Ulr-ht-1SB" firstAttribute="top" secondItem="NmH-Og-W8T" secondAttribute="bottom" constant="33" id="Zyu-Jh-h3T"/>
                 <constraint firstItem="is4-TJ-3G9" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="350" id="aGt-FI-I4c"/>
+                <constraint firstItem="2DO-2Z-DpB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="cKk-fO-Pgk"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NmH-Og-W8T" secondAttribute="trailing" constant="16" id="cjv-Ts-bWh"/>
                 <constraint firstItem="aZ7-si-vXZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="80" id="dvs-Dk-0t6"/>
+                <constraint firstItem="2DO-2Z-DpB" firstAttribute="top" secondItem="aZ7-si-vXZ" secondAttribute="bottom" id="jSv-ac-QMV"/>
+                <constraint firstItem="rlB-nW-Mam" firstAttribute="top" secondItem="Ulr-ht-1SB" secondAttribute="bottom" constant="17" id="kaQ-St-OoY"/>
                 <constraint firstItem="is4-TJ-3G9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="-40" id="mUT-6L-kS5"/>
                 <constraint firstItem="aZ7-si-vXZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="nrc-2r-YJp"/>
+                <constraint firstItem="30M-gP-nOf" firstAttribute="top" secondItem="NmH-Og-W8T" secondAttribute="bottom" id="sWg-0L-fMV"/>
                 <constraint firstItem="Ulr-ht-1SB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="t1M-3Z-OIN"/>
+                <constraint firstItem="rlB-nW-Mam" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="90" id="zaf-e3-x1x"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="97.767857142857139"/>
         </view>
@@ -83,6 +120,9 @@
         <image name="surfLogoBackground" width="159" height="234"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
