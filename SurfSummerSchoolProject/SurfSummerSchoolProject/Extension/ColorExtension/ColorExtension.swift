@@ -12,8 +12,11 @@ class ColorsExtension {
     static let black = UIColor(rgb: 0x000000)
     static let red = UIColor(rgb: 0xF35858)
     static let lightGray = UIColor(rgb: 0xB3B3B3)
+    static let lightGrayForLog = UIColor(rgb: 0xFBFBFB)
+    static let lightGrayForLine = UIColor(rgb: 0xDFDFDF)
     static let backgroundWhite = UIColor(rgb: 0xFFFFFF)
     static let lightTextGray = UIColor(rgb: 0xB0B0B0)
+    static let clear = UIColor.clear
 }
 
 extension UIColor {
