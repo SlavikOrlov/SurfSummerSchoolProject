@@ -96,23 +96,37 @@ private extension FavoriteViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            tableView.leftAnchor.constraint(
+                equalTo: view.leftAnchor
+            ),
+            tableView.topAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.topAnchor
+            ),
+            tableView.rightAnchor.constraint(
+                equalTo: view.rightAnchor
+            ),
+            tableView.bottomAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.bottomAnchor
+            )
         ])
         tableView.register(
             UINib(
                 nibName: detailImageTableViewCell,
-                bundle: .main), forCellReuseIdentifier: detailImageTableViewCell)
+                bundle: .main
+            ), forCellReuseIdentifier: detailImageTableViewCell
+        )
         tableView.register(
             UINib(
                 nibName: detailTitleTableViewCell,
-                bundle: .main), forCellReuseIdentifier: detailTitleTableViewCell)
+                bundle: .main
+            ), forCellReuseIdentifier: detailTitleTableViewCell
+        )
         tableView.register(
             UINib(
                 nibName: detailTextTableViewCell,
-                bundle: .main), forCellReuseIdentifier: detailTextTableViewCell)
+                bundle: .main
+            ), forCellReuseIdentifier: detailTextTableViewCell
+        )
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
@@ -148,7 +162,10 @@ private extension FavoriteViewController {
     
     @objc func enterSearchViewController(sender: UIBarButtonItem) {
         let searchViewController = SearchViewController()
-        self.navigationController?.pushViewController(searchViewController, animated: true)
+        self.navigationController?.pushViewController(
+            searchViewController,
+            animated: true
+        )
     }
     
     @objc func pullToRefresh(_ sender: AnyObject) {
@@ -220,6 +237,9 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailViewController = DetailViewController()
         detailViewController.model = self.postModel.favoritePosts[indexPath.section]
-        navigationController?.pushViewController(detailViewController, animated: true)
+        navigationController?.pushViewController(
+            detailViewController,
+            animated: true
+        )
     }
 }

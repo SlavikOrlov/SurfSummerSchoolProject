@@ -40,7 +40,8 @@ class SnackbarView: UIView {
             x: 16,
             y: bounds.height / 2,
             width: bounds.width - 32,
-            height: bounds.height / 2)
+            height: bounds.height / 2
+        )
     }
     
     //MARK: - Private methods

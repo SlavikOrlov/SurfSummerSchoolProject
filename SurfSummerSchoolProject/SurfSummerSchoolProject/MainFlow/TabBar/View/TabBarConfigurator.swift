@@ -40,7 +40,11 @@ private extension TabBarConfigurator {
         
         allTab.forEach { tab in
             let controller = getCurrentViewController(tab: tab)
-            let tabBarItem = UITabBarItem(title: tab.title, image: tab.image, selectedImage: tab.selectedImage)
+            let tabBarItem = UITabBarItem(
+                title: tab.title,
+                image: tab.image,
+                selectedImage: tab.selectedImage
+            )
             controller.tabBarItem = tabBarItem
             viewControllers.append(controller)
         }
@@ -51,11 +55,20 @@ private extension TabBarConfigurator {
     func getCurrentViewController(tab: TabBarModel) -> UIViewController {
         switch tab {
         case .main:
-            return wrappedInNavigationController(with: MainViewController(), title: tab.title)
+            return wrappedInNavigationController(
+                with: MainViewController(),
+                title: tab.title
+            )
         case .favorite:
-            return wrappedInNavigationController(with: FavoriteViewController(), title: tab.title)
+            return wrappedInNavigationController(
+                with: FavoriteViewController(),
+                title: tab.title
+            )
         case .profile:
-            return wrappedInNavigationController(with: ProfileViewController(), title: tab.title)
+            return wrappedInNavigationController(
+                with: ProfileViewController(),
+                title: tab.title
+            )
         }
     }
     

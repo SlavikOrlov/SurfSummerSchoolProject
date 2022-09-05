@@ -63,7 +63,8 @@ private extension SearchViewController {
                 x: 0,
                 y: 0,
                 width: 303,
-                height: 32)
+                height: 32
+            )
         )
         searchBar.placeholder = "Поиск"
         searchBar.delegate = self
@@ -167,6 +168,9 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailViewController = DetailViewController()
         detailViewController.model = posts[indexPath.item]
-        navigationController?.pushViewController(detailViewController, animated: true)
+        navigationController?.pushViewController(
+            detailViewController,
+            animated: true
+        )
     }
 }
