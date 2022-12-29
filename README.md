@@ -7,9 +7,7 @@ The Gallery application in which the user must register, after which he can see 
 
 ## Application Structure
 1. LaunchScreen
-2. Registration
-    * Login "+7 (987) 654 32 19"
-    * Password: "qwerty"
+2. Registration (Login "+7 (987) 654 32 19"; Password: "qwerty")
 3. TabBar
     * Main
     * Detail
@@ -19,21 +17,6 @@ The Gallery application in which the user must register, after which he can see 
 
 ## Stack
 * UIKit
-
-## Start
-1. Run the project
-2. Authorization
-    * Login "+7 (987) 654 32 19"
-    * Password: "qwerty"
-3. Click on the searchIcon on the navigationBar and select the sort option
-4. On the Profile, by clicking on the logOut, you can exit to the Registration
-
-## Implementation details:
-- [X] RegistrationViewController. Added error message with incorrect login/password and extensions keyboard.
-- [X] WalletViewController. UITableView with a list of cryptocurrencies. Cells store the names, price and changes per day.
-- [X] SortViewController. UITableView with list sorting options: Drop in a day ↓ / Increase per day ↑
-- [X] DetailInfoViewController. Under development.
-- [X] ProfileViewController. "LogOut" outputs to the Registration.
 
 ## Tasks:
 - [X] Initialized the application
