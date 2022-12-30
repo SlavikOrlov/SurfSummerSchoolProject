@@ -5,6 +5,8 @@ The Gallery application in which the user must register, after which he can see 
 
 [Design](https://www.figma.com/file/DskQkoBqXewHFzyqlKkao3/Surf-education-iOS?node-id=13%3A9067)
 
+[Base Url](https://pictures.chronicker.fun/api)
+
 ## Application Structure
 1. LaunchScreen
 2. Registration (Login "+7 (987) 654 32 19"; Password: "qwerty")
