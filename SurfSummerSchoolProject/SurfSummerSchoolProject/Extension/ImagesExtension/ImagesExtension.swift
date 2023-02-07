@@ -9,7 +9,7 @@ import UIKit
 
 struct ImagesExtension {
     
-    //MARK: - Constants
+    // MARK: - Constants
     
     static let backArrow = UIImage(named: "back-button")
     static let defaultImage = UIImage(named: "default-Image")

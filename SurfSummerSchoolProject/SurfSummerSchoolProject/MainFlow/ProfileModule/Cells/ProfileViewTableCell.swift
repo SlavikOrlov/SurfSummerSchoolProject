@@ -7,9 +7,9 @@
 
 import UIKit
 
-class ProfileViewTableCell: UITableViewCell {
+final class ProfileViewTableCell: UITableViewCell {
 
-    // MARK: - Views
+    // MARK: - Actions
 
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var profileFirstNameLabel: UILabel!
@@ -34,4 +34,5 @@ class ProfileViewTableCell: UITableViewCell {
         selectionStyle = .none
         profileImageView.layer.cornerRadius = 12
     }
+
 }

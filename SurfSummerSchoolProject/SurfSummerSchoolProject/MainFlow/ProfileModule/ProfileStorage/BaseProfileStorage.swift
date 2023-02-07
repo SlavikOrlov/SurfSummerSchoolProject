@@ -15,7 +15,7 @@ struct BaseProfileStorage: ProfileStorage {
         UserDefaults.standard
     }
     
-    //MARK: - Constants
+    // MARK: - Constants
     
     private let avatarKey: String = "avatar"
     private let firstNameKey: String = "firstName"
@@ -40,6 +40,7 @@ struct BaseProfileStorage: ProfileStorage {
     func removeProfile() throws {
         removeProfileFromStorage()
     }
+
 }
 
 // MARK: - Privat Methods
@@ -99,5 +100,5 @@ private extension BaseProfileStorage {
         unprotectedStorage.set(nil, forKey: phoneKey)
         unprotectedStorage.set(nil, forKey: emailKey)
     }
-}
 
+}

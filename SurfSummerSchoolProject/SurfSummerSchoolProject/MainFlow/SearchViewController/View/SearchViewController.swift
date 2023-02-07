@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchViewController: UIViewController, UIGestureRecognizerDelegate {
+final class SearchViewController: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK: - Constants
     
@@ -25,9 +25,9 @@ class SearchViewController: UIViewController, UIGestureRecognizerDelegate {
         static let hSpaceBetweenItems: CGFloat = 7
         static let vSpaceBetweenItems: CGFloat = 8
     }
-    
-    // MARK: - Views
-    
+
+    // MARK: - IBOutlets
+
     @IBOutlet weak var searchUserImage: UIImageView!
     @IBOutlet weak var searchUserLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -37,7 +37,7 @@ class SearchViewController: UIViewController, UIGestureRecognizerDelegate {
     
     private var posts = MainModel.shared.filteredPosts(searchText: "")
     
-    // MARK: - Lifecyrcle
+    // MARK: - UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +51,7 @@ class SearchViewController: UIViewController, UIGestureRecognizerDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.searchBar.endEditing(true)
     }
+
 }
 
 // MARK: - Privat Methods
@@ -104,6 +105,7 @@ private extension SearchViewController {
         navigationItem.leftBarButtonItem?.tintColor = ColorsExtension.black
         navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
+
 }
 
 // MARK: - UISearchBarDelegate
@@ -131,17 +133,24 @@ extension SearchViewController: UISearchBarDelegate {
             searchUserLabel.text = "Введите ваш запрос"
         }
     }
+
 }
 
 // MARK: - UITableViewDataSource, UITableViewDelegate, UICollectionViewDelegateFlowLayout
 
 extension SearchViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        numberOfItemsInSection section: Int
+    ) -> Int {
         return posts.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: mainItemCollectionViewCell, for: indexPath)
         if let cell = cell as? MainItemCollectionViewCell {
             cell.imageUrlInString = posts[indexPath.item].imageUrlInString
@@ -156,16 +165,29 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let itemWidth = (view.frame.width - ConstantConstraints.collectionViewPadding * 2 - ConstantConstraints.hSpaceBetweenItems) / 2
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath
+    ) -> CGSize {
+        let itemWidth = (view.frame.width -
+                         ConstantConstraints.collectionViewPadding * 2 -
+                         ConstantConstraints.hSpaceBetweenItems) / 2
         return CGSize(width: itemWidth, height: itemWidth * cellProportion)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        minimumLineSpacingForSectionAt section: Int
+    ) -> CGFloat {
         return ConstantConstraints.vSpaceBetweenItems
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath
+    ) {
         let detailViewController = DetailViewController()
         detailViewController.model = posts[indexPath.item]
         navigationController?.pushViewController(
@@ -173,4 +195,5 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
             animated: true
         )
     }
+
 }

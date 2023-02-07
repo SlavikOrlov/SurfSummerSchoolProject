@@ -21,7 +21,7 @@ final class AuthorizationViewController: UIViewController {
     @IBOutlet private weak var passwordLine: UIView!
     @IBOutlet private weak var loginButton: UIButton!
 
-    // MARK: - Lifecyrcle
+    // MARK: - UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -7,17 +7,18 @@
 
 import UIKit
 
-class ProfileTitleTableViewCell: UITableViewCell {
-   
-    //MARK: - Views
+final class ProfileTitleTableViewCell: UITableViewCell {
+
+    // MARK: - Actions
 
     @IBOutlet weak var profileTitleLable: UILabel!
     @IBOutlet weak var profileDetailLable: UILabel!
     
-    //MARK: - UITableViewCell
+    // MARK: - UITableViewCell
 
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
     }
+
 }

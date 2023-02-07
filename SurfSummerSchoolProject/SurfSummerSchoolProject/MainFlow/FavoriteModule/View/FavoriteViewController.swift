@@ -7,16 +7,8 @@
 
 import UIKit
 
-class FavoriteViewController: UIViewController {
-    
-    //MARK: - Views
-    
-    @IBOutlet weak var emptyFavoritesImage: UIImageView!
-    @IBOutlet weak var emptyFavoritesLabel: UILabel!
-    private let tableView = UITableView()
-    private let postModel: MainModel = MainModel.shared
-    private let refreshControl = UIRefreshControl()
-    
+final class FavoriteViewController: UIViewController {
+
     // MARK: - Constants
     
     private enum ConstantImages {
@@ -29,14 +21,25 @@ class FavoriteViewController: UIViewController {
     private let detailTextTableViewCell: String = "\(DetailTextTableViewCell.self)"
     private let alertViewText: String = "Вы точно хотите удалить из избранного?"
     private let numberOfRows = 3
-    
+
+    // MARK: - Private properties
+
+    private let tableView = UITableView()
+    private let postModel: MainModel = MainModel.shared
+    private let refreshControl = UIRefreshControl()
+
+    // MARK: - IBOutlets
+
+    @IBOutlet weak var emptyFavoritesImage: UIImageView!
+    @IBOutlet weak var emptyFavoritesLabel: UILabel!
+
     // MARK: - Properties
     
     private let model: MainModel = MainModel.shared
     static var favoriteTapStatus: Bool = false
     static var successLoadingPostsAfterZeroScreen: Bool = false
     
-    // MARK: - Lifecyrcle
+    // MARK: - UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +49,7 @@ class FavoriteViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureNavigationBar()
+
         if !(postModel.favoritePosts.isEmpty) && FavoriteViewController.successLoadingPostsAfterZeroScreen {
             notEmptyFavoritesNotification()
             tableView.reloadData()
@@ -57,6 +61,7 @@ class FavoriteViewController: UIViewController {
             postModel.favoritePosts.isEmpty ? emptyFavoritesNotification() : notEmptyFavoritesNotification()
         }
     }
+
 }
 
 // MARK: - Private Methods
@@ -157,28 +162,17 @@ private extension FavoriteViewController {
         refreshControl.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
         tableView.addSubview(refreshControl)
     }
-    
-    // MARK: - Actions
-    
-    @objc func enterSearchViewController(sender: UIBarButtonItem) {
-        let searchViewController = SearchViewController()
-        self.navigationController?.pushViewController(
-            searchViewController,
-            animated: true
-        )
-    }
-    
-    @objc func pullToRefresh(_ sender: AnyObject) {
-        self.tableView.reloadData()
-        refreshControl.endRefreshing()
-    }
+
 }
 
 // MARK: - UITableViewDataSource, UITableViewDelegate
 
 extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(
+        _ tableView: UITableView,
+        numberOfRowsInSection section: Int
+    ) -> Int {
         return numberOfRows
     }
     
@@ -186,7 +180,10 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
         return postModel.favoritePosts.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell {
         switch indexPath.item {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: detailImageTableViewCell)
@@ -234,7 +231,10 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath
+    ) {
         let detailViewController = DetailViewController()
         detailViewController.model = self.postModel.favoritePosts[indexPath.section]
         navigationController?.pushViewController(
@@ -242,4 +242,25 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
             animated: true
         )
     }
+
+}
+
+// MARK: - Actions
+
+@objc
+extension FavoriteViewController {
+
+    func enterSearchViewController(sender: UIBarButtonItem) {
+        let searchViewController = SearchViewController()
+        self.navigationController?.pushViewController(
+            searchViewController,
+            animated: true
+        )
+    }
+
+    func pullToRefresh(_ sender: AnyObject) {
+        self.tableView.reloadData()
+        refreshControl.endRefreshing()
+    }
+
 }

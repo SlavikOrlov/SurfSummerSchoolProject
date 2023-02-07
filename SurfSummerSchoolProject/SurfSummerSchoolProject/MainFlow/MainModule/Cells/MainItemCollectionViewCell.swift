@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainItemCollectionViewCell: UICollectionViewCell {
+final class MainItemCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Constants
     

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SnackbarView: UIView {
+final class SnackbarView: UIView {
     
     // MARK: - Properties
     
@@ -44,7 +44,7 @@ class SnackbarView: UIView {
         )
     }
     
-    //MARK: - Private methods
+    // MARK: - Private methods
     
     private func configure() {
         label.text = model.text
@@ -93,4 +93,5 @@ class SnackbarView: UIView {
             }
         )
     }
+
 }

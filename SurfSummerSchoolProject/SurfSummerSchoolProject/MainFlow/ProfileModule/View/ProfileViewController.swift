@@ -7,26 +7,26 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
-    
-    //MARK: - Views
-    
-    @IBOutlet weak var logoutButtonLabel: UIButton!
-    @IBOutlet weak var tableView: UITableView!
-    
-    //MARK: - Constants
+final class ProfileViewController: UIViewController {
+
+    // MARK: - Constants
     
     private let profileViewTableCell: String = "\(ProfileViewTableCell.self)"
     private let profileTitleTableViewCell: String = "\(ProfileTitleTableViewCell.self)"
     private let numberOfRows = 4
     private let tableCellHeight: CGFloat = 170
     private let titleTableCellHeight: CGFloat = 72
-    
+
     // MARK: - Properties
     
     private var profileModel: ProfileModel = ProfileExample.shared.profileModel
-    
-    //MARK: - Lifecyrcle
+
+    // MARK: - IBOutlets
+
+    @IBOutlet weak var logoutButtonLabel: UIButton!
+    @IBOutlet weak var tableView: UITableView!
+
+    // MARK: - UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,14 +37,13 @@ class ProfileViewController: UIViewController {
         super.viewWillAppear(animated)
         configureNavigationBar()
     }
-    
-    // MARK: - Actions
-    
-    @IBAction func logoutButtonLabel(_ sender: Any) {
-    }
-    
-    // MARK: - Private Methods
-    
+
+}
+
+// MARK: - Private Methods
+
+private extension ProfileViewController {
+
     private func configureNavigationBar() {
         navigationItem.title = "Профиль"
     }
@@ -65,16 +64,24 @@ class ProfileViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
     }
+
 }
 
 // MARK: - UITableViewDataSource, UITableViewDelegate
 
 extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+    func tableView(
+        _ tableView: UITableView,
+        numberOfRowsInSection section: Int
+    ) -> Int {
         numberOfRows
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell {
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: profileViewTableCell)
@@ -109,7 +116,10 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(
+        _ tableView: UITableView,
+        heightForRowAt indexPath: IndexPath
+    ) -> CGFloat {
         switch indexPath.row {
         case 0:
             return tableCellHeight
@@ -117,4 +127,15 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
             return titleTableCellHeight
         }
     }
+
+}
+
+// MARK: - Actions
+
+extension ProfileViewController {
+
+    @IBAction func logoutButtonLabel(_ sender: Any) {
+        // TODO: - logout to authorization
+    }
+
 }

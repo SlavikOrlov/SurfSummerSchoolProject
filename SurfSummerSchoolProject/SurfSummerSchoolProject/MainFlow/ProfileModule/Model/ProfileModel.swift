@@ -16,9 +16,11 @@ struct ProfileModel: Decodable {
     let city: String
     let phone: String
     let email: String
+
 }
 
 struct ProfileExample {
+
     static let shared = ProfileExample()
     let profileModel: ProfileModel
     
@@ -40,4 +42,5 @@ struct ProfileExample {
             )
         }
     }
+
 }

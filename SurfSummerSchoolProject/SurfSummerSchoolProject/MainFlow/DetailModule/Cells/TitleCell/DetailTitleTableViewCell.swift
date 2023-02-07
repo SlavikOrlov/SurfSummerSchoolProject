@@ -9,8 +9,8 @@ import UIKit
 
 final class DetailTitleTableViewCell: UITableViewCell {
     
-    // MARK: - Views
-    
+    // MARK: - IBOutlets
+
     @IBOutlet weak var cartTitleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
@@ -20,11 +20,18 @@ final class DetailTitleTableViewCell: UITableViewCell {
         super.awakeFromNib()
         configureAppearance()
     }
-    
-    private func configureAppearance() {
+
+}
+
+// MARK: - Private Methods
+
+private extension DetailTitleTableViewCell {
+
+    func configureAppearance() {
         selectionStyle = .none
         cartTitleLabel.font = .systemFont(ofSize: 16)
         dateLabel.font = .systemFont(ofSize: 10)
         dateLabel.textColor = ColorsExtension.black
     }
+
 }

@@ -9,15 +9,16 @@ import UIKit
 
 final class DetailViewController: UIViewController, UIGestureRecognizerDelegate {
     
-    //MARK: - Constants
+    // MARK: - Constants
+
     private let backArrowImage: UIImage? = ImagesExtension.backArrow
     private let detailImageTableViewCell: String = "\(DetailImageTableViewCell.self)"
     private let detailTitleTableViewCell: String = "\(DetailTitleTableViewCell.self)"
     private let detailTextTableViewCell: String = "\(DetailTextTableViewCell.self)"
     private let numberOfRows = 3
 
-    // MARK: - Views
-    
+    // MARK: - Private properties
+
     private let tableView = UITableView()
     
     // MARK: - Properties
@@ -36,6 +37,7 @@ final class DetailViewController: UIViewController, UIGestureRecognizerDelegate 
         super.viewWillAppear(animated)
         configureNavigationBar()
     }
+
 }
 
 // MARK: - Privat Methods
@@ -97,17 +99,24 @@ private extension DetailViewController {
         tableView.dataSource = self
         tableView.separatorStyle = .none
     }
+
 }
 
 // MARK: - UITableViewDataSource
 
 extension DetailViewController: UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(
+        _ tableView: UITableView,
+        numberOfRowsInSection section: Int
+    ) -> Int {
         return numberOfRows
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell {
         switch indexPath.item {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: detailImageTableViewCell)
@@ -132,4 +141,5 @@ extension DetailViewController: UITableViewDataSource {
             return UITableViewCell()
         }
     }
+
 }

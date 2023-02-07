@@ -166,8 +166,8 @@
 		5545513C28B26FDE00786637 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5545513D28B26FDE00786637 /* LoadErrorViewController.xib */,
 				5545513E28B26FDE00786637 /* LoadErrorViewController.swift */,
+				5545513D28B26FDE00786637 /* LoadErrorViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -491,8 +491,8 @@
 		55EFF11728B02B57009633BF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				558DB1A3289A720D00CF2B05 /* FavoriteViewController.xib */,
 				558DB1A2289A720D00CF2B05 /* FavoriteViewController.swift */,
+				558DB1A3289A720D00CF2B05 /* FavoriteViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";

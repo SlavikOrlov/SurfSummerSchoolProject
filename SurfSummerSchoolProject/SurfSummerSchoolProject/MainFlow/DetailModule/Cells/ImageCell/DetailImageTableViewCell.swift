@@ -9,7 +9,8 @@ import UIKit
 
 final class DetailImageTableViewCell: UITableViewCell {
     
-    //MARK: - Constants
+    // MARK: - Constants
+
     private enum Constants {
         static let favoriteTapped = ImagesExtension.favoriteTapped
         static let favoriteUntapped = ImagesExtension.favoriteUntapped
@@ -17,8 +18,8 @@ final class DetailImageTableViewCell: UITableViewCell {
     let favoritesStorage = FavoritesStorage.shared
     var postTextLabel: String = ""
     
-    // MARK: - Views
-    
+    // MARK: - IBOutlets
+
     @IBOutlet private weak var cartImageView: UIImageView!
     @IBOutlet private weak var favoriteButtonLabel: UIButton!
     
@@ -30,6 +31,7 @@ final class DetailImageTableViewCell: UITableViewCell {
     }
     
     // MARK: - Calculated
+
     var buttonImage: UIImage? {
         return isFavorite ? Constants.favoriteTapped : Constants.favoriteUntapped
     }
@@ -55,12 +57,23 @@ final class DetailImageTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        selectionStyle = .none
-        cartImageView.layer.cornerRadius = 12
-        cartImageView.contentMode = .scaleAspectFill
+        configureAppearance()
     }
     
     override func prepareForReuse() {
         cartImageView.image = UIImage()
     }
+
+}
+
+// MARK: - Private Methods
+
+private extension DetailImageTableViewCell {
+
+    func configureAppearance() {
+        selectionStyle = .none
+        cartImageView.layer.cornerRadius = 12
+        cartImageView.contentMode = .scaleAspectFill
+    }
+
 }

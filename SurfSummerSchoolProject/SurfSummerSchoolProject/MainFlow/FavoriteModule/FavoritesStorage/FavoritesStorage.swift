@@ -7,14 +7,14 @@
 
 import Foundation
 
-class FavoritesStorage {
+final class FavoritesStorage {
     
     // MARK: - Properties
     
     static let shared = FavoritesStorage()
     var myFavorites = [String]()
     
-    //MARK: - Private property
+    // MARK: - Private property
     
     private let keyForFavoritesStorage = "favoritePosts"
     private let defaults = UserDefaults.standard
@@ -24,9 +24,13 @@ class FavoritesStorage {
             addFavorite(favoritePost: favorite)
         }
     }
-    
-    //MARK: - Public methods
-    
+
+}
+
+// MARK: - Internal Methods
+
+extension FavoritesStorage {
+
     func isPostFavorite(post: String) -> Bool {
         if myFavorites.contains(post) {
             return true
@@ -51,4 +55,5 @@ class FavoritesStorage {
         MainViewController.favoriteTapStatus = true
         FavoriteViewController.favoriteTapStatus = true
     }
+
 }

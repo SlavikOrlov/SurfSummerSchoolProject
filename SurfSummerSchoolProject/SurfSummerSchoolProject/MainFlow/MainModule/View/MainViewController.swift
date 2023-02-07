@@ -26,7 +26,7 @@ final class MainViewController: UIViewController {
     private let cellProportion: Double = 245/168
     private let getPostErrorViewController = LoadErrorViewController()
 
-    // MARK: - Properties
+    // MARK: - Private properties
     
     private let model = MainModel.shared
     
@@ -36,7 +36,7 @@ final class MainViewController: UIViewController {
     @IBOutlet private weak var collectionView: UICollectionView!
     private let refreshControl = UIRefreshControl()
     
-    // MARK: - Lifecyrcle
+    // MARK: - UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
