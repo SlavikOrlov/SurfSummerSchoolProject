@@ -63,23 +63,37 @@ private extension DetailViewController {
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            tableView.leftAnchor.constraint(
+                equalTo: view.leftAnchor
+            ),
+            tableView.topAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.topAnchor
+            ),
+            tableView.rightAnchor.constraint(
+                equalTo: view.rightAnchor
+            ),
+            tableView.bottomAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.bottomAnchor
+            )
         ])
         tableView.register(
             UINib(
             nibName: detailImageTableViewCell,
-            bundle: .main), forCellReuseIdentifier: detailImageTableViewCell)
+            bundle: .main
+            ), forCellReuseIdentifier: detailImageTableViewCell
+        )
         tableView.register(
             UINib(
             nibName: detailTitleTableViewCell,
-            bundle: .main), forCellReuseIdentifier: detailTitleTableViewCell)
+            bundle: .main
+            ), forCellReuseIdentifier: detailTitleTableViewCell
+        )
         tableView.register(
             UINib(
             nibName: detailTextTableViewCell,
-            bundle: .main), forCellReuseIdentifier: detailTextTableViewCell)
+            bundle: .main
+            ), forCellReuseIdentifier: detailTextTableViewCell
+        )
         tableView.dataSource = self
         tableView.separatorStyle = .none
     }

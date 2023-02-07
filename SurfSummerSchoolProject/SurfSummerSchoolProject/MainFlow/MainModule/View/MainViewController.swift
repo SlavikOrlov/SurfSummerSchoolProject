@@ -167,7 +167,10 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: mainItemCollectionViewCell, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: mainItemCollectionViewCell,
+            for: indexPath
+        )
         if let cell = cell as? MainItemCollectionViewCell {
             self.activityIndicatorView.isHidden = true
             cell.titleLabel.text = model.posts[indexPath.item].title

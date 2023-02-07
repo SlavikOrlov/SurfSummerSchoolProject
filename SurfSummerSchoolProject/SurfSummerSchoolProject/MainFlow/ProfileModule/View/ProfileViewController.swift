@@ -53,11 +53,15 @@ class ProfileViewController: UIViewController {
         tableView.register(
             UINib(
                 nibName: profileViewTableCell,
-                bundle: .main), forCellReuseIdentifier: profileViewTableCell)
+                bundle: .main
+            ), forCellReuseIdentifier: profileViewTableCell
+        )
         tableView.register(
             UINib(
                 nibName: profileTitleTableViewCell,
-                bundle: .main), forCellReuseIdentifier: profileTitleTableViewCell)
+                bundle: .main
+            ), forCellReuseIdentifier: profileTitleTableViewCell
+        )
         tableView.dataSource = self
         tableView.delegate = self
     }

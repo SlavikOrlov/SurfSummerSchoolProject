@@ -133,12 +133,27 @@ extension AuthorizationViewController {
     func enablePasswordToggle(){
         var buttonConfiguration = UIButton.Configuration.filled()
         buttonConfiguration.baseBackgroundColor = ColorsExtension.clear
-        buttonConfiguration.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: -16, bottom: 0, trailing: 0)
+        buttonConfiguration.contentInsets = NSDirectionalEdgeInsets(
+            top: 0,
+            leading: -16,
+            bottom: 0,
+            trailing: 0
+        )
         
         showHidePasswordButton.configuration = buttonConfiguration
-        showHidePasswordButton.setImage(ImagesExtension.passwordIsHidden, for: .normal)
-        showHidePasswordButton.setImage(ImagesExtension.passwordIsShown, for: .selected)
-        showHidePasswordButton.addTarget(self, action: #selector(togglePasswordView), for: .touchUpInside)
+        showHidePasswordButton.setImage(
+            ImagesExtension.passwordIsHidden,
+            for: .normal
+        )
+        showHidePasswordButton.setImage(
+            ImagesExtension.passwordIsShown,
+            for: .selected
+        )
+        showHidePasswordButton.addTarget(
+            self,
+            action: #selector(togglePasswordView),
+            for: .touchUpInside
+        )
         passwordTextField.rightView = showHidePasswordButton
         passwordTextField.rightViewMode = .always
         showHidePasswordButton.alpha = 0.4
@@ -154,7 +169,8 @@ extension AuthorizationViewController {
                 x: 0,
                 y: 0,
                 width: loginTextField.frame.width,
-                height: 16)
+                height: 16
+            )
         )
         loginEmptyNotification.textAlignment = .left
         loginEmptyNotification.text = "Поле не может быть пустым"
@@ -196,7 +212,8 @@ extension AuthorizationViewController {
                 x: 0,
                 y: 0,
                 width: loginTextField.frame.width,
-                height: 16)
+                height: 16
+            )
         )
         passwordEmptyNotification.textAlignment = .left
         passwordEmptyNotification.text = "Поле не может быть пустым"
@@ -257,7 +274,8 @@ extension UITextField {
                 x: 0,
                 y: 0,
                 width: amount,
-                height: self.frame.size.height)
+                height: self.frame.size.height
+            )
         )
         self.leftView = paddingView
         self.leftViewMode = .always
@@ -269,7 +287,8 @@ extension UITextField {
                 x: 0,
                 y: 0,
                 width: amount,
-                height: self.frame.size.height)
+                height: self.frame.size.height
+            )
         )
         self.rightView = paddingView
         self.rightViewMode = .always
