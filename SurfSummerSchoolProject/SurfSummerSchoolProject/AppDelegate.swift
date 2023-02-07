@@ -10,12 +10,19 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    // MARK: - Properties
+
     var window: UIWindow?
     var tokenStorage: TokenStorage {
         BaseTokenStorage()
     }
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    // MARK: - Internal Methods
+
+    func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+    ) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         if #available(iOS 13.0, *) {
@@ -38,6 +45,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         self?.runMainFlow()
                     case .failure:
                         // TODO: - Handle error, if token was not received
+                        print("Server is not working")
+                        self?.runMainFlow()
                         break
                     }
                 }
@@ -55,4 +64,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             .instantiateInitialViewController()
         window?.rootViewController = lauchScreenViewController
     }
+
 }

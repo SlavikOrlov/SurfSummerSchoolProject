@@ -19,6 +19,7 @@ final class TabBarConfigurator {
     func configure() -> UITabBarController {
         return getTabBarController()
     }
+
 }
 
 // MARK: - Private Methods
@@ -78,4 +79,5 @@ private extension TabBarConfigurator {
         navigationController.navigationBar.tintColor = ColorsExtension.black
         return navigationController
     }
+
 }

@@ -8,13 +8,17 @@
 import Foundation
 
 struct AuthService {
-    
+
+    // MARK: - Properties
+
     let dataTask = BaseNetworkTask<AuthRequestModel, AuthResponseModel>(
         inNeedInjectToken: false,
         method: .post,
         path: "auth/login"
     )
-    
+
+    // MARK: - Internal Methods
+
     func performLoginRequestAndSaveToken(
         credentials: AuthRequestModel,
         _ onResponseWasReceived: @escaping (_ result: Result<AuthResponseModel, Error>) -> Void
@@ -30,4 +34,5 @@ struct AuthService {
             onResponseWasReceived(result)
         }
     }
+
 }

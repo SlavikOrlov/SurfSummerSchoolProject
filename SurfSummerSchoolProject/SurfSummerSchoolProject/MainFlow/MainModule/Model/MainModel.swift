@@ -35,8 +35,8 @@ final class MainModel {
         posts.filter { $0.isFavorite }
     }
     
-    // MARK: - Methods
-    
+    // MARK: - Internal Methods
+
     func filteredPosts(searchText: String) -> [DetailModel] {
         posts.filter { $0.title.lowercased().contains(searchText.lowercased()) }
     }
@@ -77,12 +77,13 @@ final class MainModel {
         guard let index = posts.firstIndex(where: { $0.title == post.title }) else { return }
         posts[index].isFavorite.toggle()
     }
+
 }
 
 struct DetailModel: Equatable {
     
-    // MARK: - Internal Properties
-    
+    // MARK: - Properties
+
     let imageUrlInString: String
     let title: String
     var isFavorite: Bool
@@ -115,4 +116,5 @@ struct DetailModel: Equatable {
         )
         return emptyModel
     }
+
 }

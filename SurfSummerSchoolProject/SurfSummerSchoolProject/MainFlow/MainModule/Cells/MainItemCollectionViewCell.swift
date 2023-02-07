@@ -17,8 +17,8 @@ class MainItemCollectionViewCell: UICollectionViewCell {
     }
     let favoritesStorage = FavoritesStorage.shared
     
-    // MARK: - Views
-    
+    // MARK: - IBOutlets
+
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var favoriteButton: UIButton!
@@ -40,6 +40,7 @@ class MainItemCollectionViewCell: UICollectionViewCell {
             }
         }
     }
+
     // MARK: - Properties
     
     var imageUrlInString: String = "" {
@@ -56,18 +57,6 @@ class MainItemCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    // MARK: - Actions
-    
-    @IBAction private func favoriteButton(_ sender: UIButton) {
-        didFavoritesTapped?()
-        if favoritesStorage.isPostFavorite(post: self.titleLabel.text ?? "") {
-            favoritesStorage.removeFavorite(favoritePost: self.titleLabel.text ?? "")
-        } else {
-            favoritesStorage.addFavorite(favoritePost: self.titleLabel.text ?? "")
-        }
-        isFavorite.toggle()
-    }
-    
     // MARK: - UICollectionViewCell
     
     override func awakeFromNib() {
@@ -80,6 +69,7 @@ class MainItemCollectionViewCell: UICollectionViewCell {
         titleLabel.text = ""
         imageView.image = UIImage()
     }
+
 }
 
 // MARK: - Private Methods
@@ -93,4 +83,22 @@ private extension MainItemCollectionViewCell {
         favoriteButton.tintColor = ColorsExtension.white
         isFavorite = false
     }
+
 }
+
+// MARK: - Actions
+
+private extension MainItemCollectionViewCell {
+
+    @IBAction private func favoriteButton(_ sender: UIButton) {
+        didFavoritesTapped?()
+        if favoritesStorage.isPostFavorite(post: self.titleLabel.text ?? "") {
+            favoritesStorage.removeFavorite(favoritePost: self.titleLabel.text ?? "")
+        } else {
+            favoritesStorage.addFavorite(favoritePost: self.titleLabel.text ?? "")
+        }
+        isFavorite.toggle()
+    }
+
+}
+

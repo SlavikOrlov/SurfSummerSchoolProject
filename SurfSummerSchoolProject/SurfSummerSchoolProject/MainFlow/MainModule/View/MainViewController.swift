@@ -7,9 +7,10 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+final class MainViewController: UIViewController {
     
     // MARK: - Constants
+
     private enum ConstantImages {
         static let searchBar: UIImage? = ImagesExtension.searchBar
     }
@@ -19,18 +20,18 @@ class MainViewController: UIViewController {
         static let spaceBetweenElements: CGFloat = 7
         static let spaceBetweenRows: CGFloat = 8
     }
+
     static var favoriteTapStatus: Bool = false
     private let mainItemCollectionViewCell: String = "\(MainItemCollectionViewCell.self)"
     private let cellProportion: Double = 245/168
     private let getPostErrorViewController = LoadErrorViewController()
-    
-    
+
     // MARK: - Properties
     
     private let model = MainModel.shared
     
-    // MARK: - Views
-    
+    // MARK: - IBOutlets
+
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet private weak var collectionView: UICollectionView!
     private let refreshControl = UIRefreshControl()
@@ -145,28 +146,24 @@ private extension MainViewController {
         getPostErrorViewController.reloadButtonAction = reloadButtonAction
     }
     
-    // MARK: - Actions
     
-    @objc func enterSearchViewController(sender: UIBarButtonItem) {
-        let searchViewController = SearchViewController()
-        self.navigationController?.pushViewController(searchViewController, animated: true)
-    }
-    
-    @objc func pullToRefresh(_ sender: AnyObject) {
-        self.model.loadPosts()
-        refreshControl.endRefreshing()
-    }
 }
 
-// MARK: - UICollection
+// MARK: - UICollectionViewDataSource, UICollectionViewDelegate
 
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        numberOfItemsInSection section: Int
+    ) -> Int {
         return model.posts.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: mainItemCollectionViewCell,
             for: indexPath
@@ -183,22 +180,54 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath
+    ) -> CGSize {
         let itemWidth = (view.frame.width - Constants.horizontalInset * 2 - Constants.spaceBetweenElements) / 2
         return CGSize(width: itemWidth, height: cellProportion * itemWidth)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        minimumLineSpacingForSectionAt section: Int
+    ) -> CGFloat {
         return Constants.spaceBetweenRows
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        minimumInteritemSpacingForSectionAt section: Int
+    ) -> CGFloat {
         return Constants.spaceBetweenElements
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath
+    ) {
         let detailViewController = DetailViewController()
         detailViewController.model = model.posts[indexPath.row]
         navigationController?.pushViewController(detailViewController, animated: true)
     }
+
+}
+
+// MARK: - Actions
+
+private extension MainViewController {
+
+    @objc func enterSearchViewController(sender: UIBarButtonItem) {
+        let searchViewController = SearchViewController()
+        self.navigationController?.pushViewController(searchViewController, animated: true)
+    }
+    
+    @objc func pullToRefresh(_ sender: AnyObject) {
+        self.model.loadPosts()
+        refreshControl.endRefreshing()
+    }
+
 }

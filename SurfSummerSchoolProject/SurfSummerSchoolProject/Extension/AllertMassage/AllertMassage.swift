@@ -35,4 +35,5 @@ func addAlertView(
         alert.preferredAction = confirmAction
         
         viewController.present(alert, animated: true, completion: nil)
-    }
+
+}

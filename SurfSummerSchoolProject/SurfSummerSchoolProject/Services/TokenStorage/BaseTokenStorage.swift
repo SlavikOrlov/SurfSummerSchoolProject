@@ -81,6 +81,7 @@ struct BaseTokenStorage: TokenStorage {
         
         removeTokenSavingDate()
     }
+
 }
 
 // MARK: - Privat Methods
@@ -119,4 +120,5 @@ private extension BaseTokenStorage {
             throw Error.keyIsAlreadyInKeyChain
         }
     }
+
 }

@@ -36,6 +36,7 @@ func phoneMask(phoneNumber: String, shouldRemoveLastDigit: Bool) -> String {
         )
         number = String(number[number.startIndex..<maxIndex])
     }
+
     if shouldRemoveLastDigit {
         let maxIndex = number.index(
             number.startIndex,
@@ -85,6 +86,7 @@ func phoneMask(phoneNumber: String, shouldRemoveLastDigit: Bool) -> String {
         )
     }
     return "+" + number
+
 }
 
 func clearPhoneNumberFromMask(phoneNumber: String) -> String {

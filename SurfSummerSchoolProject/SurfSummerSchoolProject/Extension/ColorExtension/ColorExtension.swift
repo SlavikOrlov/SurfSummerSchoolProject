@@ -7,7 +7,10 @@
 
 import UIKit
 
-class ColorsExtension {
+final class ColorsExtension {
+
+    // MARK: - Constants
+
     static let white = UIColor(rgb: 0xFFFFFF)
     static let black = UIColor(rgb: 0x000000)
     static let red = UIColor(rgb: 0xF35858)
@@ -17,9 +20,12 @@ class ColorsExtension {
     static let backgroundWhite = UIColor(rgb: 0xFFFFFF)
     static let lightTextGray = UIColor(rgb: 0xB0B0B0)
     static let clear = UIColor.clear
+
 }
 
-extension UIColor {
+// MARK: - Private Methods
+
+private extension UIColor {
     convenience init(rgb: UInt) {
         self.init(
             red: CGFloat((rgb & 0xFF0000) >> 16) / 255.0,

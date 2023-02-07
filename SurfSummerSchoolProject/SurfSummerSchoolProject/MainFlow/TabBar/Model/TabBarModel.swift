@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 enum TabBarModel {
+
     case main
     case favorite
     case profile
@@ -38,4 +39,5 @@ enum TabBarModel {
     var selectedImage: UIImage? {
         return image
     }
+
 }

@@ -7,85 +7,20 @@
 
 import UIKit
 
-class AuthorizationViewController: UIViewController {
+final class AuthorizationViewController: UIViewController {
     
     // MARK: - Constants
     
     private let showHidePasswordButton = UIButton(type: .custom)
     
-    // MARK: - Views
-    
-    @IBOutlet weak var loginTextField: UITextField!
-    @IBOutlet weak var loginLine: UIView!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var passwordLine: UIView!
-    @IBOutlet weak var loginButton: UIButton!
-    
-    // MARK: - Actions
-    
-    @IBAction func loginButtonAction(_ sender: Any) {
-        if loginTextField.text == "" {
-            showEmptyLoginNotification()
-        }
-        if passwordTextField.text == "" {
-            showEmptyPasswordNotification()
-        }
-        if !(loginTextField.text == "" || passwordTextField.text == "") {
-            
-            guard let phoneNumber = loginTextField.text else { return }
-            let phoneNumberClearedFromMask = clearPhoneNumberFromMask(
-                phoneNumber: phoneNumber
-            )
-            guard let password = passwordTextField.text else { return }
-            let credentials = AuthRequestModel(
-                phone: phoneNumberClearedFromMask,
-                password: password
-            )
-            AuthService()
-                .performLoginRequestAndSaveToken(credentials: credentials) { [weak self] result in
-                    switch result {
-                    case .success:
-                        DispatchQueue.main.async {
-                            if let delegate = UIApplication.shared.delegate as? AppDelegate {
-                                let mainViewController = TabBarConfigurator().configure()
-                                delegate.window?.rootViewController = mainViewController
-                            }
-                        }
-                    case .failure (let error):
-                        DispatchQueue.main.async {
-                            var snackbarText = "Что-то пошло не так"
-                            if let currentError = error as? SomeErrors {
-                                switch currentError {
-                                case .badRequest(let response):
-                                    if response["message"] == "Неверный логин/пароль" {
-                                        snackbarText = "Логин или пароль введен неправильно"
-                                    }
-                                case .notNetworkConnection:
-                                    snackbarText = "Отсутствует интернет соединение"
-                                default:
-                                    snackbarText = "Что-то пошло не так"
-                                }
-                            }
-                            let model = SnackbarModel(text: snackbarText)
-                            let snackbar = SnackbarView(model: model)
-                            guard let `self` = self else { return }
-                            snackbar.showSnackBar(on: self, with: model)
-                        }
-                    }
-                }
-        }
-    }
-    
-    @IBAction func ButtonActionWithoutLog(_ sender: Any) {
-        loginTextField.text = "+7 (987) 654 32 19"
-        passwordTextField.text = "qwerty"
-    }
-    
-    @objc func togglePasswordView(_ sender: Any) {
-        passwordTextField.isSecureTextEntry.toggle()
-        showHidePasswordButton.isSelected.toggle()
-    }
-    
+    // MARK: - IBOutlets
+
+    @IBOutlet private weak var loginTextField: UITextField!
+    @IBOutlet private weak var loginLine: UIView!
+    @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var passwordLine: UIView!
+    @IBOutlet private weak var loginButton: UIButton!
+
     // MARK: - Lifecyrcle
     
     override func viewDidLoad() {
@@ -98,9 +33,10 @@ class AuthorizationViewController: UIViewController {
         super.viewWillAppear(animated)
         configureNavigationBar()
     }
+
 }
 
-// MARK: - Private Methods AuthorizationViewController
+// MARK: - Private Methods
 
 private extension AuthorizationViewController {
     
@@ -126,10 +62,7 @@ private extension AuthorizationViewController {
     func configureNavigationBar() {
         self.navigationItem.title = "Вход"
     }
-}
 
-extension AuthorizationViewController {
-    
     func enablePasswordToggle(){
         var buttonConfiguration = UIButton.Configuration.filled()
         buttonConfiguration.baseBackgroundColor = ColorsExtension.clear
@@ -158,7 +91,10 @@ extension AuthorizationViewController {
         passwordTextField.rightViewMode = .always
         showHidePasswordButton.alpha = 0.4
     }
+
 }
+
+// MARK: - Internal Methods
 
 extension AuthorizationViewController {
     
@@ -262,11 +198,12 @@ extension AuthorizationViewController {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         dismissEmptyFieldsNotidication()
     }
+
 }
 
 // MARK: - Private Methods UITextField
 
-extension UITextField {
+private extension UITextField {
     
     func setLeftPaddingPoints(_ amount:CGFloat){
         let paddingView = UIView(
@@ -293,6 +230,7 @@ extension UITextField {
         self.rightView = paddingView
         self.rightViewMode = .always
     }
+
 }
 
 // MARK: - UITableViewDelegate
@@ -310,4 +248,74 @@ extension AuthorizationViewController: UITextFieldDelegate {
         }
         return true
     }
+
+}
+
+// MARK: - Actions
+
+private extension AuthorizationViewController {
+    
+    @IBAction func loginButtonAction(_ sender: Any) {
+        if loginTextField.text == "" {
+            showEmptyLoginNotification()
+        }
+        if passwordTextField.text == "" {
+            showEmptyPasswordNotification()
+        }
+        if !(loginTextField.text == "" || passwordTextField.text == "") {
+            
+            guard let phoneNumber = loginTextField.text else { return }
+            let phoneNumberClearedFromMask = clearPhoneNumberFromMask(
+                phoneNumber: phoneNumber
+            )
+            guard let password = passwordTextField.text else { return }
+            let credentials = AuthRequestModel(
+                phone: phoneNumberClearedFromMask,
+                password: password
+            )
+            AuthService()
+                .performLoginRequestAndSaveToken(credentials: credentials) { [weak self] result in
+                    switch result {
+                    case .success:
+                        DispatchQueue.main.async {
+                            if let delegate = UIApplication.shared.delegate as? AppDelegate {
+                                let mainViewController = TabBarConfigurator().configure()
+                                delegate.window?.rootViewController = mainViewController
+                            }
+                        }
+                    case .failure (let error):
+                        DispatchQueue.main.async {
+                            var snackbarText = "Что-то пошло не так"
+                            if let currentError = error as? SomeErrors {
+                                switch currentError {
+                                case .badRequest(let response):
+                                    if response["message"] == "Неверный логин/пароль" {
+                                        snackbarText = "Логин или пароль введен неправильно"
+                                    }
+                                case .notNetworkConnection:
+                                    snackbarText = "Отсутствует интернет соединение"
+                                default:
+                                    snackbarText = "Что-то пошло не так"
+                                }
+                            }
+                            let model = SnackbarModel(text: snackbarText)
+                            let snackbar = SnackbarView(model: model)
+                            guard let `self` = self else { return }
+                            snackbar.showSnackBar(on: self, with: model)
+                        }
+                    }
+                }
+        }
+    }
+
+    @IBAction func ButtonActionWithoutLog(_ sender: Any) {
+        loginTextField.text = "+7 (987) 654 32 19"
+        passwordTextField.text = "qwerty"
+    }
+
+    @objc func togglePasswordView(_ sender: Any) {
+        passwordTextField.isSecureTextEntry.toggle()
+        showHidePasswordButton.isSelected.toggle()
+    }
+
 }

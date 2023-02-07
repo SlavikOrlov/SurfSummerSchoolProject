@@ -9,8 +9,8 @@ import Foundation
 
 struct PictureResponseModel: Decodable {
     
-    // MARK: - Internal Properties
-    
+    // MARK: - Properties
+
     let id: String
     let title: String
     let content: String

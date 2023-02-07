@@ -27,4 +27,5 @@ struct ImagesExtension {
     static let surfLogoBackground = UIImage(named: "surfLogoBackground")
     static let logoSplash = UIImage(named: "surfSplash")
     static let sweetCorgi = UIImage(named: "sweetCorgi")
+
 }

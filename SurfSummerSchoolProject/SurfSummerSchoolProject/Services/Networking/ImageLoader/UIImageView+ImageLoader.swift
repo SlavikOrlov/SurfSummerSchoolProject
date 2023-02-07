@@ -9,7 +9,9 @@ import Foundation
 import UIKit
 
 extension UIImageView {
-    
+
+    // MARK: - Internal Methods
+
     func loadImage(from url: URL) {
         ImageLoader().loadImage(from: url) { [weak self] result in
             if case let .success(image) = result {
@@ -19,4 +21,5 @@ extension UIImageView {
             }
         }
     }
+
 }

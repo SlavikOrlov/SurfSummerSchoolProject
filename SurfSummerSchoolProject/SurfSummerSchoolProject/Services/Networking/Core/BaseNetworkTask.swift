@@ -13,7 +13,9 @@ struct BaseNetworkTask<AbstractInput: Encodable, AbstractOutput: Decodable>: Net
     
     typealias Input = AbstractInput
     typealias Output = AbstractOutput
-    
+
+    // MARK: - Properties
+
     var baseURL: URL? {
         URL(string: "https://pictures.chronicker.fun/api")
     }
@@ -75,15 +77,19 @@ struct BaseNetworkTask<AbstractInput: Encodable, AbstractOutput: Decodable>: Net
             onResponseWasReceived(.failure(error))
         }
     }
+
 }
 
 // MARK: - EmptyModel
 
 extension BaseNetworkTask where Input == EmptyModel {
     
-    func performRequest(_ onResponseWasReceived: @escaping (_ result: Result<AbstractOutput, Error>) -> Void) {
+    func performRequest(
+        _ onResponseWasReceived: @escaping (_ result: Result<AbstractOutput, Error>
+    ) -> Void) {
         performRequest(input: EmptyModel(), onResponseWasReceived)
     }
+
 }
 
 // MARK: - Cache logic
@@ -102,6 +108,7 @@ private extension BaseNetworkTask {
         let cachedUrlResponse = CachedURLResponse(response: response, data: cachedData)
         urlCache.storeCachedResponse(cachedUrlResponse, for: request)
     }
+
 }
 
 // MARK: - Private Methods
@@ -163,4 +170,5 @@ private extension BaseNetworkTask {
         }
         return newUrlWithQuery
     }
+
 }
